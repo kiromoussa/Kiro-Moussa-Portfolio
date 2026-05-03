@@ -1,0 +1,20 @@
+{
+  "turn_count": 24,
+  "last_session_id": "a22b3959-14f5-4eba-82a4-56cab70c5ab1",
+  "last_event_key": "a22b3959-14f5-4eba-82a4-56cab70c5ab1:transcript:4e81bf6ee26992a00212369be3aaa4df92821493e8a814138ae8c15b37810031",
+  "last_transcript_hash": "4e81bf6ee26992a00212369be3aaa4df92821493e8a814138ae8c15b37810031",
+  "last_model": "gemini-3-flash-preview",
+  "last_provider": "gemini",
+  "last_turn_total_tokens": 438593,
+  "last_session_total_tokens": 21786133,
+  "session_totals_by_model": {
+    "gemini-3-flash-preview": 20375064,
+    "gemini-3.1-pro-preview": 1411069
+  },
+  "session_totals_by_provider": {
+    "gemini": 21786133
+  },
+  "cwd_mode": "parent-leaf",
+  "last_cwd_label": "Downloads/Portfolio 2",
+  "updated_at": "2026-05-02T22:16:31.923Z"
+}

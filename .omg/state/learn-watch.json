@@ -1,0 +1,12 @@
+{
+  "last_session_id": "a22b3959-14f5-4eba-82a4-56cab70c5ab1",
+  "last_event_key": "a22b3959-14f5-4eba-82a4-56cab70c5ab1:transcript:4e81bf6ee26992a00212369be3aaa4df92821493e8a814138ae8c15b37810031",
+  "last_prompted_session_id": "a22b3959-14f5-4eba-82a4-56cab70c5ab1",
+  "last_reason": "prompt-cooldown-active",
+  "last_prompted_at": "2026-05-02T21:45:32.261Z",
+  "last_user_message_count": 24,
+  "last_actionable_message_count": 12,
+  "deep_interview_lock_active": false,
+  "deep_interview_lock_source": "/Users/kiromoussa/Downloads/Portfolio 2/.omg/state/deep-interview.json",
+  "updated_at": "2026-05-02T22:16:31.861Z"
+}
