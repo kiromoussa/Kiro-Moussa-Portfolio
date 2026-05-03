@@ -242,16 +242,24 @@
             .timeline-year { font-size: 3.5rem !important; }
             .project-title-lg { font-size: 3.5rem !important; }
             .footer-email { font-size: 2rem !important; }
-            .credentials-mobile { display: none !important; }
-            .hero-photo-mobile {
-                display: flex !important;
-                justify-content: flex-start !important;
+            .hero-mobile-top-row {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 0.75rem;
                 width: 100%;
             }
+            .hero-photo-mobile {
+                display: flex !important;
+                justify-content: flex-end !important;
+                width: auto;
+                flex-shrink: 0;
+            }
             .hero-photo-mobile .hero-headshot-frame {
-                max-width: 180px;
-                width: 100%;
-                max-height: min(38vh, 240px);
+                max-width: 118px;
+                width: 118px;
+                max-height: 150px;
                 aspect-ratio: 3 / 4;
                 margin: 0;
             }
@@ -259,12 +267,37 @@
                 align-items: start;
                 gap: 1rem !important;
             }
+            .hero-credentials-slot .logo-box {
+                padding: 8px;
+            }
+            .hero-credentials-slot .hero-logo-grid {
+                gap: 0.5rem;
+            }
+            .hero-credentials-slot .logo-box img {
+                max-height: 36px;
+            }
             .hero-tagline {
                 position: relative;
                 z-index: 2;
                 margin-top: 0.5rem;
                 padding-right: 1.25rem;
                 padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+            .hero-tagline-impact {
+                text-align: left;
+            }
+            .hero-role-mobile {
+                text-align: right;
+                align-self: flex-end;
+                max-width: 11rem;
+            }
+            .hero-role-mobile h2 {
+                font-size: 1rem !important;
+                line-height: 1.05 !important;
             }
             .hero-tagline p {
                 max-width: 100%;
@@ -294,6 +327,13 @@
                 padding-right: 0;
                 padding-bottom: 0;
                 max-width: 42rem;
+                display: block;
+            }
+            .hero-tagline-impact,
+            .hero-role-mobile {
+                text-align: inherit;
+                align-self: auto;
+                max-width: none;
             }
         }
     </style>
@@ -333,9 +373,11 @@
     <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden hero-section-mobile">
         <div class="absolute inset-0 z-0" style="background-image: url('uploads/jason-w-KRr9SWTsaxg.jpg'); background-size: cover; background-position: center 35%; will-change: transform;"></div>
         <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.72) 0%, rgba(3,3,3,0.55) 50%, rgba(3,3,3,0.92) 100%);"></div>
-        <div class="hero-main-grid max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
+        <div class="hero-main-grid max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start lg:items-center" style="position:relative;z-index:1;">
             
-            <div id="heroText" class="lg:col-span-5 disintegrate-layer">
+            <div class="flex flex-col gap-4 md:contents">
+                <div class="hero-mobile-top-row flex flex-row items-start justify-between gap-3 w-full md:contents">
+            <div id="heroText" class="flex-1 min-w-0 lg:col-span-5 disintegrate-layer">
                 <h1 class="bebas hero-title leading-[0.8] italic tracking-tighter" style="font-size:clamp(4.5rem,15vw,15rem);">
                     Hi, I'm<br><span class="gold-text">Kiro</span>
                 </h1>
@@ -356,16 +398,17 @@
                 </div>
             </div>
 
-            <div class="hero-photo-mobile lg:col-span-4 flex justify-start pt-2 md:justify-center md:pt-6 lg:pt-0">
+            <div class="hero-photo-mobile flex flex-shrink-0 justify-end pt-0 md:justify-center md:pt-6 lg:col-span-4 lg:pt-0">
                 <div class="hero-headshot-frame relative max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
                     <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" width="800" height="1000" class="w-full h-full object-cover object-top" decoding="async" fetchpriority="high">
                 </div>
             </div>
+                </div>
 
-            <div class="credentials-mobile lg:col-span-3">
+            <div class="hero-credentials-slot credentials-mobile lg:col-span-3">
                 <div class="space-y-6">
                     <p class="mono text-[9px] font-bold text-gray-300 tracking-[0.4em] uppercase">CREDENTIALS</p>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="hero-logo-grid grid grid-cols-2 grid-rows-3 gap-2 md:gap-3">
                         <div class="logo-box" title="MIT">
                             <img src="uploads/MIT_logo_2003-2023.svg.png" alt="MIT" class="hover-color">
                         </div>
@@ -381,23 +424,31 @@
                         <div class="logo-box" title="Western Center Academy">
                             <img src="wca-logo-transparent.png" alt="WCA" class="wca-logo">
                         </div>
-                        <div class="logo-box border-none bg-transparent flex flex-col items-start justify-center p-0">
+                        <div class="logo-box bg-white/[0.02] lg:hidden" title="" aria-hidden="true"></div>
+                    </div>
+                    <div class="hidden lg:flex border-none bg-transparent flex-col items-start justify-center p-0 pt-2">
                             <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white">
                                 Student,<br>Founder,<br>Designer,<br>Human.
                             </h2>
-                        </div>
                     </div>
                     <div class="pt-8 border-t border-white/10">
                         <p class="text-[10px] mono text-gray-300 uppercase tracking-widest italic font-bold">Computer Science, Economics & Data Science</p>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
 
         <div class="hero-tagline max-w-[1600px] mx-auto w-full px-6 md:px-10">
+            <div class="hero-tagline-impact">
             <p class="text-2xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
                 Focusing on creating an <span class="font-black italic gold-text">impact</span> to actually change and help the world.
             </p>
+            </div>
+            <div class="hero-role-mobile lg:hidden">
+                <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white text-right">
+                    Student,<br>Founder,<br>Designer,<br>Human.
+                </h2>
+            </div>
         </div>
     </header>
 
