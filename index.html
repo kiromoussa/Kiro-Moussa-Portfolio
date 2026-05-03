@@ -232,109 +232,13 @@
             .hamburger { display: flex; }
         }
 
-        /* Mobile section padding */
+        /* Mobile */
         @media (max-width: 767px) {
-            .section-pad { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-            .section-py { padding-top: 5rem !important; padding-bottom: 5rem !important; }
-            .hero-title { font-size: 5.5rem !important; }
+            .hero-photo, .hero-credentials { display: none !important; }
             .section-heading { font-size: 3.5rem !important; }
-            .journey-heading { font-size: 3.5rem !important; margin-bottom: 3rem !important; }
+            .journey-heading { font-size: 3.5rem !important; margin-bottom: 2rem !important; }
             .timeline-year { font-size: 3.5rem !important; }
-            .project-title-lg { font-size: 3.5rem !important; }
             .footer-email { font-size: 2rem !important; }
-            .hero-mobile-top-row {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                justify-content: space-between;
-                gap: 0.75rem;
-                width: 100%;
-            }
-            .hero-photo-mobile {
-                display: flex !important;
-                justify-content: flex-end !important;
-                width: auto;
-                flex-shrink: 0;
-            }
-            .hero-photo-mobile .hero-headshot-frame {
-                max-width: 118px;
-                width: 118px;
-                max-height: 150px;
-                aspect-ratio: 3 / 4;
-                margin: 0;
-            }
-            .hero-main-grid {
-                align-items: start;
-                gap: 1rem !important;
-            }
-            .hero-credentials-slot .logo-box {
-                padding: 8px;
-            }
-            .hero-credentials-slot .hero-logo-grid {
-                gap: 0.5rem;
-            }
-            .hero-credentials-slot .logo-box img {
-                max-height: 36px;
-            }
-            .hero-tagline {
-                position: relative;
-                z-index: 2;
-                margin-top: 0.5rem;
-                padding-right: 1.25rem;
-                padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-            .hero-tagline-impact {
-                text-align: left;
-            }
-            .hero-role-mobile {
-                text-align: right;
-                align-self: flex-end;
-                max-width: 11rem;
-            }
-            .hero-role-mobile h2 {
-                font-size: 1rem !important;
-                line-height: 1.05 !important;
-            }
-            .hero-tagline p {
-                max-width: 100%;
-                line-height: 1.15;
-                font-size: 1.125rem;
-            }
-            .skill-card-row {
-                display: grid;
-                grid-template-columns: repeat(2, 120px);
-                gap: 0.75rem;
-                justify-content: start;
-            }
-            .timeline-year-row { padding-left: 0 !important; padding-right: 0 !important; }
-            .hero-section-mobile {
-                justify-content: flex-start !important;
-                padding-top: 6rem !important;
-                padding-bottom: 0.5rem !important;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-tagline {
-                position: absolute;
-                bottom: 3rem;
-                left: 2.5rem;
-                right: auto;
-                margin-top: 0;
-                padding-right: 0;
-                padding-bottom: 0;
-                max-width: 42rem;
-                display: block;
-            }
-            .hero-tagline-impact,
-            .hero-role-mobile {
-                text-align: inherit;
-                align-self: auto;
-                max-width: none;
-            }
         }
     </style>
 </head>
@@ -370,18 +274,16 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden hero-section-mobile">
+    <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden">
         <div class="absolute inset-0 z-0" style="background-image: url('uploads/jason-w-KRr9SWTsaxg.jpg'); background-size: cover; background-position: center 35%; will-change: transform;"></div>
         <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.72) 0%, rgba(3,3,3,0.55) 50%, rgba(3,3,3,0.92) 100%);"></div>
-        <div class="hero-main-grid max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-start lg:items-center" style="position:relative;z-index:1;">
-            
-            <div class="flex flex-col gap-4 md:contents">
-                <div class="hero-mobile-top-row flex flex-row items-start justify-between gap-3 w-full md:contents">
-            <div id="heroText" class="flex-1 min-w-0 lg:col-span-5 disintegrate-layer">
-                <h1 class="bebas hero-title leading-[0.8] italic tracking-tighter" style="font-size:clamp(4.5rem,15vw,15rem);">
+        <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
+
+            <div id="heroText" class="lg:col-span-5 disintegrate-layer">
+                <h1 class="bebas leading-[0.8] italic tracking-tighter" style="font-size:clamp(5rem,16vw,15rem);">
                     Hi, I'm<br><span class="gold-text">Kiro</span>
                 </h1>
-                <div class="mt-12 space-y-6">
+                <div class="mt-8 md:mt-12 space-y-4 md:space-y-6">
                     <p class="mono text-[11px] font-bold text-gray-200 tracking-[0.4em] uppercase">COMPUTER SCIENCE, ECONOMICS & DATA SCIENCE MIT 2029</p>
                     <div class="flex space-x-8">
                         <a href="https://linkedin.com/in/kiromoussa" class="social-link">
@@ -390,7 +292,7 @@
                         <a href="https://github.com/kiromoussa" class="social-link">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 3.518 1.305 4.376.997.107-.775.521-1.305.874-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://instagram.com/kiromoussa_" class="social-link">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                     </div>
@@ -398,17 +300,16 @@
                 </div>
             </div>
 
-            <div class="hero-photo-mobile flex flex-shrink-0 justify-end pt-0 md:justify-center md:pt-6 lg:col-span-4 lg:pt-0">
-                <div class="hero-headshot-frame relative max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
-                    <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" width="800" height="1000" class="w-full h-full object-cover object-top" decoding="async" fetchpriority="high">
+            <div class="hero-photo lg:col-span-4 flex justify-center">
+                <div class="relative w-full max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
+                    <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" class="w-full h-full object-cover object-top">
                 </div>
             </div>
-                </div>
 
-            <div class="hero-credentials-slot credentials-mobile lg:col-span-3">
+            <div class="hero-credentials lg:col-span-3">
                 <div class="space-y-6">
                     <p class="mono text-[9px] font-bold text-gray-300 tracking-[0.4em] uppercase">CREDENTIALS</p>
-                    <div class="hero-logo-grid grid grid-cols-2 grid-rows-3 gap-2 md:gap-3">
+                    <div class="grid grid-cols-2 gap-3">
                         <div class="logo-box" title="MIT">
                             <img src="uploads/MIT_logo_2003-2023.svg.png" alt="MIT" class="hover-color">
                         </div>
@@ -424,35 +325,27 @@
                         <div class="logo-box" title="Western Center Academy">
                             <img src="wca-logo-transparent.png" alt="WCA" class="wca-logo">
                         </div>
-                        <div class="logo-box bg-white/[0.02] lg:hidden" title="" aria-hidden="true"></div>
-                    </div>
-                    <div class="hidden lg:flex border-none bg-transparent flex-col items-start justify-center p-0 pt-2">
+                        <div class="logo-box border-none bg-transparent flex flex-col items-start justify-center p-0">
                             <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white">
                                 Student,<br>Founder,<br>Designer,<br>Human.
                             </h2>
+                        </div>
                     </div>
                     <div class="pt-8 border-t border-white/10">
                         <p class="text-[10px] mono text-gray-300 uppercase tracking-widest italic font-bold">Computer Science, Economics & Data Science</p>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
-        <div class="hero-tagline max-w-[1600px] mx-auto w-full px-6 md:px-10">
-            <div class="hero-tagline-impact">
-            <p class="text-2xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
+        <div class="max-w-[1600px] mx-auto w-full absolute bottom-12 left-6 md:left-10 right-6 md:right-auto" style="z-index:1;">
+            <p class="text-xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
                 Focusing on creating an <span class="font-black italic gold-text">impact</span> to actually change and help the world.
             </p>
-            </div>
-            <div class="hero-role-mobile lg:hidden">
-                <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white text-right">
-                    Student,<br>Founder,<br>Designer,<br>Human.
-                </h2>
-            </div>
         </div>
     </header>
 
-    <!-- Professional Timeline -->
+        <!-- Professional Timeline -->
     <section id="journey" class="py-20 md:py-40 px-6 md:px-10 border-t border-white/10 bg-[#050505]">
         <div class="max-w-[1200px] mx-auto">
             <div class="flex items-center space-x-6 mb-12 md:mb-32">
