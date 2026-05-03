@@ -249,9 +249,27 @@
                 width: 100%;
             }
             .hero-photo-mobile .hero-headshot-frame {
-                max-width: 200px;
+                max-width: 180px;
                 width: 100%;
+                max-height: min(38vh, 240px);
+                aspect-ratio: 3 / 4;
                 margin: 0;
+            }
+            .hero-main-grid {
+                align-items: start;
+                gap: 1rem !important;
+            }
+            .hero-tagline {
+                position: relative;
+                z-index: 2;
+                margin-top: 0.5rem;
+                padding-right: 1.25rem;
+                padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+            }
+            .hero-tagline p {
+                max-width: 100%;
+                line-height: 1.15;
+                font-size: 1.125rem;
             }
             .skill-card-row {
                 display: grid;
@@ -261,9 +279,21 @@
             }
             .timeline-year-row { padding-left: 0 !important; padding-right: 0 !important; }
             .hero-section-mobile {
-                justify-content: flex-end !important;
-                padding-top: 7rem !important;
-                padding-bottom: 2.5rem !important;
+                justify-content: flex-start !important;
+                padding-top: 6rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero-tagline {
+                position: absolute;
+                bottom: 3rem;
+                left: 2.5rem;
+                right: auto;
+                margin-top: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+                max-width: 42rem;
             }
         }
     </style>
@@ -303,7 +333,7 @@
     <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden hero-section-mobile">
         <div class="absolute inset-0 z-0" style="background-image: url('uploads/jason-w-KRr9SWTsaxg.jpg'); background-size: cover; background-position: center 35%; will-change: transform;"></div>
         <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.72) 0%, rgba(3,3,3,0.55) 50%, rgba(3,3,3,0.92) 100%);"></div>
-        <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
+        <div class="hero-main-grid max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
             
             <div id="heroText" class="lg:col-span-5 disintegrate-layer">
                 <h1 class="bebas hero-title leading-[0.8] italic tracking-tighter" style="font-size:clamp(4.5rem,15vw,15rem);">
@@ -326,7 +356,7 @@
                 </div>
             </div>
 
-            <div class="hero-photo-mobile lg:col-span-4 flex justify-start pt-6 md:justify-center lg:pt-0">
+            <div class="hero-photo-mobile lg:col-span-4 flex justify-start pt-2 md:justify-center md:pt-6 lg:pt-0">
                 <div class="hero-headshot-frame relative max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
                     <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" width="800" height="1000" class="w-full h-full object-cover object-top" decoding="async" fetchpriority="high">
                 </div>
@@ -364,7 +394,7 @@
             </div>
         </div>
 
-        <div class="max-w-[1600px] mx-auto w-full absolute bottom-12 left-10" style="z-index:1;">
+        <div class="hero-tagline max-w-[1600px] mx-auto w-full px-6 md:px-10">
             <p class="text-2xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
                 Focusing on creating an <span class="font-black italic gold-text">impact</span> to actually change and help the world.
             </p>
