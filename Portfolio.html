@@ -670,7 +670,6 @@
 
         // Timeline progress + dot activation
         const timelineNodes = document.querySelectorAll('.timeline-node');
-        const timelineLine = document.querySelector('.timeline-line');
 
         function updateTimelineProgress() {
             const section = document.getElementById('journey');
@@ -679,10 +678,6 @@
             const scrolled = window.scrollY - sectionTop;
             const progress = Math.min(Math.max(scrolled / (sectionHeight - window.innerHeight), 0), 1);
             timelineProgress.style.height = (progress * 100) + '%';
-
-            // Get the pixel height of the progress line relative to the timeline container
-            const lineTop = timelineLine.getBoundingClientRect().top + window.scrollY;
-            const progressPx = timelineProgress.getBoundingClientRect().height;
 
             timelineNodes.forEach(node => {
                 const dot = node.querySelector('.timeline-dot-outer');
