@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiro Moussa | kiro.city</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;300;400;500;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --bg: #030303;
+        }
+
+        * {
+            cursor: url('paper_airplane.png') 16 16, auto !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a, button, .logo-box, .project-card, .social-link, .skill-card, nav a {
+            cursor: url('paper_airplane.png') 16 16, pointer !important;
+        }
+
+        .gold-text { color: var(--gold); }
+
+        html, body {
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: auto !important;
+        }
+
+        .bebas { font-family: 'Bebas Neue', cursive; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .city-gradient {
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .nav-glass {
+            background: rgba(3, 3, 3, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .disintegrate-layer {
+            will-change: transform, opacity, filter;
+            transition: all 0.1s linear;
+        }
+
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-line {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+        .timeline-progress {
+            width: 2px;
+            background: var(--gold);
+            box-shadow: 0 0 15px var(--gold);
+            position: absolute;
+            left: -0.5px;
+            top: 0;
+            height: 0%;
+            transition: height 0.08s ease-out;
+        }
+
+        .logo-box {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            padding: 12px;
+        }
+        .logo-box:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease;
+        }
+        .logo-box:hover .hover-color { filter: brightness(1) invert(0); }
+        .logo-box .no-hover { filter: brightness(0) invert(1) !important; }
+        .logo-box .wca-logo { filter: brightness(0) invert(1); }
+        .logo-box:hover .wca-logo { filter: brightness(1) invert(0); }
+
+        .project-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 15, 15, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            background: rgba(20, 20, 20, 0.6);
+            transform: scale(1.01);
+        }
+
+        .social-link {
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        .social-link:hover {
+            opacity: 1;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Skill Cards */
+        .skill-card {
+            width: 120px;
+            height: 120px;
+            background: #0a0a0a;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono';
+            font-size: 0.48rem;
+            font-weight: 700;
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.04) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .skill-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+        }
+        .skill-card:hover::after {
+            opacity: 1;
+        }
+        .skill-card img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .skill-card:hover img {
+            transform: scale(1.12);
+        }
+        .skill-card span {
+            font-size: 0.52rem;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.6);
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        .skill-card:hover span {
+            color: var(--gold);
+        }
+        .skill-card img.dark-icon {
+            filter: invert(1) brightness(1.4);
+        }
+
+        .timeline-dot-outer.active {
+            border-color: #D4AF37 !important;
+            border-width: 2px !important;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .timeline-dot-inner.active {
+            background-color: #D4AF37 !important;
+            opacity: 1 !important;
+            width: 12px !important;
+            height: 12px !important;
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#D4AF37] selection:text-black">
+    <div class="city-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] nav-glass px-10 py-5">
+        <div class="max-w-[1600px] mx-auto flex justify-between items-center">
+            <a href="#" class="bebas text-3xl tracking-tighter gold-text">KIRO MOUSSA</a>
+            <div class="hidden md:flex space-x-12 items-center text-[10px] font-extrabold tracking-[0.3em] mono uppercase text-white">
+                <a href="#projects" class="hover:text-[#D4AF37] transition-colors">WORK</a>
+                <a href="#journey" class="hover:text-[#D4AF37] transition-colors">JOURNEY</a>
+                <a href="#skills" class="hover:text-[#D4AF37] transition-colors">SKILLS</a>
+                <a href="#writing" class="hover:text-[#D4AF37] transition-colors">WRITING</a>
+                <a href="#contact" class="px-5 py-2 border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all text-white">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex flex-col justify-center px-10 overflow-hidden">
+        <div class="absolute inset-0 z-0" style="background-image: url('../jason-w-KRr9SWTsaxg.jpg'); background-size: cover; background-position: center 35%; will-change: transform;"></div>
+        <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.72) 0%, rgba(3,3,3,0.55) 50%, rgba(3,3,3,0.92) 100%);"></div>
+        <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
+            
+            <div id="heroText" class="lg:col-span-5 disintegrate-layer">
+                <h1 class="bebas text-[9rem] md:text-[12rem] lg:text-[15rem] leading-[0.8] italic tracking-tighter">
+                    Hi, I'm<br><span class="gold-text">Kiro</span>
+                </h1>
+                <div class="mt-12 space-y-6">
+                    <p class="mono text-[11px] font-bold text-gray-200 tracking-[0.4em] uppercase">COMPUTER SCIENCE, ECONOMICS & DATA SCIENCE MIT 2029</p>
+                    <div class="flex space-x-8">
+                        <a href="https://linkedin.com/in/kiromoussa" class="social-link">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://github.com/kiromoussa" class="social-link">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 3.518 1.305 4.376.997.107-.775.521-1.305.874-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 flex justify-center">
+                <div class="relative w-full max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
+                    <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <div class="space-y-6">
+                    <p class="mono text-[9px] font-bold text-gray-300 tracking-[0.4em] uppercase">CREDENTIALS</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="logo-box" title="MIT">
+                            <img src="../MIT_logo_2003-2023.svg.png" alt="MIT" class="hover-color">
+                        </div>
+                        <div class="logo-box" title="QuestBridge">
+                            <img src="../questbridge-logo-ed-1024x644-1-removebg-preview.png" alt="QuestBridge" class="no-hover">
+                        </div>
+                        <div class="logo-box" title="Egypt">
+                            <img src="../egypt-flag-logo.png" alt="Egypt" class="hover-color">
+                        </div>
+                        <div class="logo-box" title="Laidlaw Foundation">
+                            <img src="../laidlaw-foundation-logo-vector-removebg-preview.png" alt="Laidlaw" class="hover-color">
+                        </div>
+                        <div class="logo-box" title="Western Center Academy">
+                            <img src="wca-logo-transparent.png" alt="WCA" class="wca-logo">
+                        </div>
+                        <div class="logo-box border-none bg-transparent flex flex-col items-start justify-center p-0">
+                            <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white">
+                                Student,<br>Founder,<br>Designer,<br>Human.
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-white/10">
+                        <p class="text-[10px] mono text-gray-300 uppercase tracking-widest italic font-bold">Computer Science, Economics & Data Science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[1600px] mx-auto w-full absolute bottom-12 left-10" style="z-index:1;">
+            <p class="text-2xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
+                Focusing on creating an <span class="font-black italic gold-text">impact</span> to actually change and help the world.
+            </p>
+        </div>
+    </header>
+
+    <!-- Professional Timeline -->
+    <section id="journey" class="py-40 px-10 border-t border-white/10 bg-[#050505]">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex items-center space-x-6 mb-32">
+                <div class="h-[1px] w-20 bg-[#D4AF37]"></div>
+                <h2 class="bebas text-9xl italic gold-text tracking-tighter">THE JOURNEY</h2>
+            </div>
+
+            <div id="timelineContainer" class="timeline-container pl-12 md:pl-0">
+                <div class="timeline-line hidden md:block" style="left: 50%;">
+                    <div id="timelineProgress" class="timeline-progress"></div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-node relative flex flex-col md:flex-row-reverse items-center justify-between mb-40">
+                    <div class="hidden md:block w-[45%] text-left pl-20">
+                        <h3 class="bebas text-9xl gold-text italic">2025</h3>
+                    </div>
+                    <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
+                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border-2 border-[#D4AF37] flex items-center justify-center shadow-[0_0_20px_var(--gold-glow)]">
+                            <div class="timeline-dot-inner w-3 h-3 rounded-full bg-[#D4AF37] animate-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-[45%] pr-10 md:pr-20 text-left md:text-right">
+                        <div class="project-card p-10">
+                            <h4 class="text-2xl font-bold uppercase gold-text mb-4 italic">MIT: CS, Data Science & Economics</h4>
+                            <p class="text-gray-100 font-medium leading-relaxed">Enrolled at MIT pursuing Computer Science, Data Science, and Economics. Launched Plateform, personalized nutrition tracking as easy as Apple Pay, ranking real-time campus menus against your goals. Shipped to students at MIT and UC Riverside. Applied to Y Combinator Summer 2026.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-node relative flex flex-col md:flex-row items-center justify-between mb-40">
+                    <div class="hidden md:block w-[45%] text-right pr-20">
+                        <h3 class="bebas text-9xl gold-text italic">2024</h3>
+                    </div>
+                    <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
+                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center">
+                            <div class="timeline-dot-inner w-2 h-2 rounded-full bg-white/20"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-[45%] pl-10 md:pl-20">
+                        <div class="project-card p-10">
+                            <h4 class="text-2xl font-bold uppercase gold-text mb-4 italic">HackMIT, IT Work & National Champion</h4>
+                            <p class="text-gray-100 font-medium leading-relaxed">Built RefGraph at HackMIT: a graph-native citation explorer powered by AI. Won National Online Champions in Academic Decathlon. Applied to 40+ programs, got into 13 fly-in programs, and traveled across 9 different states to visit campuses. Accepted to QuestBridge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-node relative flex flex-col md:flex-row-reverse items-center justify-between mb-40">
+                    <div class="hidden md:block w-[45%] text-left pl-20">
+                        <h3 class="bebas text-9xl gold-text italic">2023</h3>
+                    </div>
+                    <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
+                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center">
+                            <div class="timeline-dot-inner w-2 h-2 rounded-full bg-white/20"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-[45%] pr-10 md:pr-20 text-left md:text-right">
+                        <div class="project-card p-10">
+                            <h4 class="text-2xl font-bold uppercase gold-text mb-4 italic">Research, Robotics & Hospital Volunteer</h4>
+                            <p class="text-gray-100 font-medium leading-relaxed">Received 2x Silver Awards at RCSEF for Nystagmus vision software. Led FTC Robotics 8472 as Team Captain, writing Java for complex autonomous tasks and earning up to 150pts. Volunteered 4-8hrs/week at Loma Linda University Hospital, working the front line of healthcare and developing a drive to fix failures in life-critical systems. Founded the school Coding Club.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roots -->
+                <div class="timeline-node relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="hidden md:block w-[45%] text-right pr-20">
+                        <h3 class="bebas text-9xl gold-text italic">ROOTS</h3>
+                    </div>
+                    <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
+                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border border-white/10 flex items-center justify-center">
+                            <div class="timeline-dot-inner w-2 h-2 rounded-full bg-white/20"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-[45%] pl-10 md:pl-20">
+                        <div class="project-card p-10">
+                            <h4 class="text-2xl font-bold uppercase gold-text mb-4 italic">Egypt → California</h4>
+                            <p class="text-gray-100 font-medium leading-relaxed italic mb-6">
+                                "Born in Egypt. Grew up during the 2011 Revolution. Moved to California at 7. Built between two worlds, bilingual in Arabic and English, shaped by both."
+                            </p>
+                            <p class="text-gray-100 font-medium leading-relaxed">
+                                At 12, ran Minecraft servers on Windows Server 2016: the shift from user to system architect. Low-income background taught relentless resourcefulness: squeeze everything from every opportunity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-40 px-10 border-t border-white/10 bg-black">
+        <div class="max-w-[1600px] mx-auto">
+            <h2 class="bebas text-9xl italic gold-text tracking-tighter mb-24">PROJECTS</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <div class="project-card flex flex-col min-h-[500px] overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="uploads/plateform-screenshot.png" alt="Plateform App" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
+                    </div>
+                    <div class="p-12 flex flex-col flex-1">
+                        <p class="mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 01</p>
+                        <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">PLATEFORM</h3>
+                        <p class="text-xl font-light uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white">Personalized nutrition tracking, as easy as Apple Pay. Real-time dining hall menus ranked against your goals.</p>
+                        <div class="mt-auto flex justify-between items-end">
+                            <div class="space-y-2">
+                                <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Stack</p>
+                                <div class="flex gap-4">
+                                    <span class="text-[10px] font-bold gold-text uppercase">React</span>
+                                    <span class="text-[10px] font-bold gold-text uppercase">Swift</span>
+                                    <span class="text-[10px] font-bold gold-text uppercase">Supabase</span>
+                                </div>
+                            </div>
+                            <a href="https://plateform.live" target="_blank" class="px-8 py-3 border border-white/10 hover:border-[#D4AF37] transition-all text-[10px] mono font-bold tracking-widest uppercase text-white">Launch ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card flex flex-col min-h-[500px] overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="uploads/nystagmus-screenshot.png" alt="Nystagmus Vision" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
+                    </div>
+                    <div class="p-12 flex flex-col flex-1">
+                        <p class="mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 02</p>
+                        <h3 class="bebas text-7xl italic leading-none mb-6">NYSTAGMUS VISION</h3>
+                        <p class="text-lg font-light uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed mb-12 text-white">
+                            Computer vision software counter-oscillating text to match eye movement. Awarded 2x Silver at RCSEF.
+                        </p>
+                        <div class="mt-auto flex justify-between items-end">
+                            <div class="space-y-2">
+                                <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Achievements</p>
+                                <div class="flex gap-4">
+                                    <span class="text-[10px] font-bold gold-text uppercase">JavaScript</span>
+                                    <span class="text-[10px] font-bold gold-text uppercase">2X SILVER RCSEF</span>
+                                </div>
+                            </div>
+                            <a href="https://sites.google.com/view/nystagmuskiro/" target="_blank" class="px-8 py-3 border border-white/10 hover:border-[#D4AF37] transition-all text-[10px] mono font-bold tracking-widest uppercase text-white">Case Study ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card p-12 flex flex-col min-h-[500px]">
+                    <p class="mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 03</p>
+                    <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">REFGRAPH</h3>
+                    <p class="text-2xl font-light uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white">Graph-native academic citation explorer. AI extracts concepts, maps citation networks, surfaces hidden connections between papers.</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="space-y-2">
+                            <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Stack</p>
+                            <div class="flex gap-4">
+                                <span class="text-[10px] font-bold gold-text uppercase">Python</span>
+                                <span class="text-[10px] font-bold gold-text uppercase">HTML</span>
+                                <span class="text-[10px] font-bold gold-text uppercase">CSS</span>
+                                <span class="text-[10px] font-bold gold-text uppercase">PyTorch</span>
+                            </div>
+                        </div>
+                        <a href="https://plume.hackmit.org/gallery?search=refgraph&hackathon_id=hack-2025&page=1" target="_blank" class="px-8 py-3 border border-white/10 hover:border-[#D4AF37] transition-all text-[10px] mono font-bold tracking-widest uppercase text-white">View ↗</a>
+                    </div>
+                </div>
+
+                <div id="writing" class="project-card p-12 flex flex-col min-h-[500px]">
+                    <p class="mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 04</p>
+                    <h3 class="bebas text-8xl italic leading-none mb-6">THE TECH</h3>
+                    <p class="text-2xl font-light uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white">Staff writer at MIT's independent student newspaper since 1881. Covering technology, campus life, and the ideas shaping the future.</p>
+                    <div class="mt-auto flex justify-between items-end">
+                        <div class="space-y-2">
+                            <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Publication</p>
+                            <div class="flex gap-4">
+                                <span class="text-[10px] font-bold gold-text uppercase">MIT</span>
+                                <span class="text-[10px] font-bold gold-text uppercase">Journalism</span>
+                                <span class="text-[10px] font-bold gold-text uppercase">Est. 1881</span>
+                            </div>
+                        </div>
+                        <a href="https://thetech.com/authors/kiro-moussa" target="_blank" class="px-8 py-3 border border-white/10 hover:border-[#D4AF37] transition-all text-[10px] mono font-bold tracking-widest uppercase text-white">Read ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Proficiencies (Modern Grid) -->
+    <section id="skills" class="py-40 px-10 border-t border-white/10 bg-[#030303]">
+        <div class="max-w-[1600px] mx-auto">
+            <p class="mono font-bold text-gray-300 mb-6 tracking-widest uppercase text-[10px]">TECHNICAL PROFICIENCIES</p>
+            <h2 class="bebas text-9xl italic gold-text tracking-tighter mb-24 leading-none">SKILLS</h2>
+            
+            <div class="space-y-16">
+                <!-- Programming -->
+                <div>
+                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;programming&gt;</h3>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python">
+                            <span>PYTHON</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg" alt="Java">
+                            <span>JAVA</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/swift/swift-original.svg" alt="Swift">
+                            <span>SWIFT</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/c/c-original.svg" alt="C">
+                            <span>C</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <span>JS</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            <span>TS</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/julia/julia-original.svg" alt="Julia">
+                            <span>JULIA</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg" alt="MATLAB">
+                            <span>MATLAB</span>
+                        </div>
+                    </div>
+                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/programming&gt;</h3>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div>
+                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;itTools&gt;</h3>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg" alt="React">
+                            <span>REACT</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/nextjs/nextjs-original.svg" alt="Next.js" class="dark-icon">
+                            <span>NEXT.JS</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/swift/swift-original.svg" alt="SwiftUI">
+                            <span>SWIFTUI</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind">
+                            <span>TAILWIND</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" alt="Supabase">
+                            <span>SUPABASE</span>
+                        </div>
+                        <div class="skill-card">
+                            <svg width="36" height="36" viewBox="0 0 76 65" fill="white" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1;transition:transform 0.3s ease;flex-shrink:0;">
+                                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z"/>
+                            </svg>
+                            <span>VERCEL</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/figma/figma-original.svg" alt="Figma">
+                            <span>FIGMA</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/github/github-original.svg" alt="GitHub" class="dark-icon">
+                            <span>GITHUB</span>
+                        </div>
+                    </div>
+                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/itTools&gt;</h3>
+                </div>
+
+                <!-- Creative & Systems -->
+                <div>
+                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;creativeAndSystems&gt;</h3>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <div class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
+                            <span>PREMIERE</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop">
+                            <span>PHOTOSHOP</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Illustrator">
+                            <span>ILLUSTRATOR</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://www.vectorlogo.zone/logos/virtualbox/virtualbox-icon.svg" alt="VirtualBox">
+                            <span>VIRTUALBOX</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/linux/linux-original.svg" alt="Arch Linux">
+                            <span>ARCH LINUX</span>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://www.vectorlogo.zone/logos/canva/canva-icon.svg" alt="Canva">
+                            <span>CANVA</span>
+                        </div>
+                    </div>
+                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/creativeAndSystems&gt;</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-40 px-10 border-t border-[#D4AF37]/20 relative overflow-hidden">
+        <div class="max-w-[1600px] mx-auto text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-16">
+                <div class="flex flex-col gap-10">
+                    <a href="tel:9516420830" class="mono text-sm text-gray-400 hover:text-[#D4AF37] transition-colors tracking-widest uppercase mb-2 block">+1 (951) 642-0830</a>
+                    <a id="contact" href="mailto:kiro@mit.edu" class="bebas text-5xl md:text-6xl hover:text-white transition-colors tracking-tighter underline decoration-[#D4AF37]/40 underline-offset-8 text-white">KIRO@MIT.EDU</a>
+                    <div class="flex items-center gap-8">
+                        <a href="https://linkedin.com/in/kiromoussa" target="_blank" class="social-link" title="LinkedIn">
+                            <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://github.com/kiromoussa" target="_blank" class="social-link" title="GitHub">
+                            <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 3.518 1.305 4.376.997.107-.775.521-1.305.874-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/kiromoussa_" target="_blank" class="social-link" title="Instagram">
+                            <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="mono text-right text-[10px] text-gray-200 space-y-2 uppercase tracking-widest">
+                    <p>© 2026 KIRO MOUSSA</p>
+                    <p>KIRO.CITY</p>
+                    <p>42.3601° N, 71.0589° W</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        const heroText = document.getElementById('heroText');
+        const timelineProgress = document.getElementById('timelineProgress');
+        const timelineContainer = document.getElementById('timelineContainer');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY < 1000) {
+                const ratio = Math.min(scrollY / 800, 1);
+                heroText.style.opacity = 1 - (ratio * 1.2);
+                heroText.style.filter = `blur(${ratio * 30}px) contrast(${1 + ratio})`;
+                heroText.style.transform = `translateY(${ratio * 200}px) scale(${1 + ratio * 0.4})`;
+                heroText.style.letterSpacing = `${ratio * 3}rem`;
+            }
+        }, { passive: true });
+
+        // Timeline progress + dot activation
+        const timelineNodes = document.querySelectorAll('.timeline-node');
+        const timelineLine = document.querySelector('.timeline-line');
+
+        function updateTimelineProgress() {
+            const section = document.getElementById('journey');
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            const sectionHeight = section.scrollHeight;
+            const scrolled = window.scrollY - sectionTop;
+            const progress = Math.min(Math.max(scrolled / (sectionHeight - window.innerHeight), 0), 1);
+            timelineProgress.style.height = (progress * 100) + '%';
+
+            // Get the pixel height of the progress line relative to the timeline container
+            const lineTop = timelineLine.getBoundingClientRect().top + window.scrollY;
+            const progressPx = timelineProgress.getBoundingClientRect().height;
+
+            timelineNodes.forEach(node => {
+                const dot = node.querySelector('.timeline-dot-outer');
+                const inner = node.querySelector('.timeline-dot-inner');
+                const dotTop = dot.getBoundingClientRect().top + window.scrollY;
+                const dotMid = dotTop + dot.offsetHeight / 2;
+                // activate when the midpoint of the dot is above the viewport center
+                const threshold = window.scrollY + window.innerHeight * 0.6;
+                if (dotMid <= threshold) {
+                    dot.classList.add('active');
+                    inner.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                    inner.classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+        updateTimelineProgress();
+    </script>
+</body>
+</html>
