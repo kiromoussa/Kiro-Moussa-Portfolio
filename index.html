@@ -234,7 +234,9 @@
 
         /* Mobile */
         @media (max-width: 767px) {
-            .hero-photo, .hero-credentials { display: none !important; }
+            .hero-photo { display: none !important; }
+            .hero-credentials { display: block !important; margin-top: 2rem; }
+            .hero-credentials .grid { grid-template-columns: repeat(3, 1fr) !important; gap: 0.6rem !important; }
             .section-heading { font-size: 3.5rem !important; }
             .journey-heading { font-size: 3.5rem !important; margin-bottom: 2rem !important; }
             .timeline-year { font-size: 3.5rem !important; }
