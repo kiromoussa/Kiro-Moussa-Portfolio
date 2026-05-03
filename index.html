@@ -243,12 +243,35 @@
             .project-title-lg { font-size: 3.5rem !important; }
             .footer-email { font-size: 2rem !important; }
             .credentials-mobile { display: none !important; }
-            .hero-photo-mobile { display: flex !important; justify-content: center; }
+            .hero-photo-mobile {
+                display: flex !important;
+                justify-content: flex-start !important;
+                width: 100%;
+            }
             .hero-photo-mobile .hero-headshot-frame {
                 max-width: 200px;
                 width: 100%;
+                margin: 0;
+            }
+            .skill-card-row {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.75rem;
+                justify-items: stretch;
+            }
+            .skill-card-row .skill-card {
+                width: 100%;
+                max-width: none;
+                height: auto;
+                min-height: 100px;
+                aspect-ratio: 1;
             }
             .timeline-year-row { padding-left: 0 !important; padding-right: 0 !important; }
+            .hero-section-mobile {
+                justify-content: flex-end !important;
+                padding-top: 7rem !important;
+                padding-bottom: 2.5rem !important;
+            }
         }
     </style>
 </head>
@@ -284,7 +307,7 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden">
+    <header class="relative h-screen flex flex-col justify-center px-6 md:px-10 overflow-hidden hero-section-mobile">
         <div class="absolute inset-0 z-0" style="background-image: url('uploads/jason-w-KRr9SWTsaxg.jpg'); background-size: cover; background-position: center 35%; will-change: transform;"></div>
         <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.72) 0%, rgba(3,3,3,0.55) 50%, rgba(3,3,3,0.92) 100%);"></div>
         <div class="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center" style="position:relative;z-index:1;">
@@ -310,7 +333,7 @@
                 </div>
             </div>
 
-            <div class="hero-photo-mobile lg:col-span-4 flex justify-center pt-8 lg:pt-0">
+            <div class="hero-photo-mobile lg:col-span-4 flex justify-start pt-6 md:justify-center lg:pt-0">
                 <div class="hero-headshot-frame relative max-w-[450px] aspect-[4/5] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)]">
                     <img src="uploads/kiro-headshot.jpg" alt="Kiro Moussa" width="800" height="1000" class="w-full h-full object-cover object-top" decoding="async" fetchpriority="high">
                 </div>
@@ -550,7 +573,7 @@
                 <!-- Programming -->
                 <div>
                     <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;programming&gt;</h3>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python">
                             <span>PYTHON</span>
@@ -590,7 +613,7 @@
                 <!-- Tools & Platforms -->
                 <div>
                     <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;itTools&gt;</h3>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg" alt="React">
                             <span>REACT</span>
@@ -632,7 +655,7 @@
                 <!-- Creative & Systems -->
                 <div>
                     <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;creativeAndSystems&gt;</h3>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
                             <span>PREMIERE</span>
@@ -666,7 +689,7 @@
 
     <!-- Footer -->
     <footer class="bg-black py-20 md:py-40 px-6 md:px-10 border-t border-[#D4AF37]/20 relative overflow-hidden">
-        <div class="max-w-[1600px] mx-auto text-center md:text-left">
+        <div class="max-w-[1600px] mx-auto text-left">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16">
                 <div class="flex flex-col gap-10">
                     <a href="tel:9516420830" class="mono text-sm text-gray-400 hover:text-[#D4AF37] transition-colors tracking-widest uppercase mb-2 block">+1 (951) 642-0830</a>
