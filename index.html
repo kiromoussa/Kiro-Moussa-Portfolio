@@ -361,7 +361,7 @@
 
                 <!-- 2025 -->
                 <div class="timeline-node relative flex flex-col md:flex-row-reverse items-center justify-between mb-40">
-                    <div class="hidden md:block w-[45%] text-left pl-20">
+                    <div class="w-full md:w-[45%] text-left md:pl-20 mb-4 md:mb-0">
                         <h3 class="bebas timeline-year text-5xl md:text-9xl gold-text italic">2025</h3>
                     </div>
                     <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
@@ -379,7 +379,7 @@
 
                 <!-- 2024 -->
                 <div class="timeline-node relative flex flex-col md:flex-row items-center justify-between mb-40">
-                    <div class="hidden md:block w-[45%] text-right pr-20">
+                    <div class="w-full md:w-[45%] text-right md:pr-20 mb-4 md:mb-0">
                         <h3 class="bebas timeline-year text-5xl md:text-9xl gold-text italic">2024</h3>
                     </div>
                     <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
@@ -397,7 +397,7 @@
 
                 <!-- 2023 -->
                 <div class="timeline-node relative flex flex-col md:flex-row-reverse items-center justify-between mb-40">
-                    <div class="hidden md:block w-[45%] text-left pl-20">
+                    <div class="w-full md:w-[45%] text-left md:pl-20 mb-4 md:mb-0">
                         <h3 class="bebas timeline-year text-5xl md:text-9xl gold-text italic">2023</h3>
                     </div>
                     <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
@@ -415,7 +415,7 @@
 
                 <!-- Roots -->
                 <div class="timeline-node relative flex flex-col md:flex-row items-center justify-between">
-                    <div class="hidden md:block w-[45%] text-right pr-20">
+                    <div class="w-full md:w-[45%] text-right md:pr-20 mb-4 md:mb-0">
                         <h3 class="bebas timeline-year text-5xl md:text-9xl gold-text italic">ROOTS</h3>
                     </div>
                     <div class="absolute left-[-32px] md:left-1/2 md:translate-x-[-50%] z-10">
@@ -685,32 +685,45 @@
     </footer>
 
     <script>
-        const lenis = new Lenis();
-        function raf(time) {
-            lenis.raf(time);
+        const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+        // Lenis smooth scroll — desktop only
+        let lenis;
+        if (!isMobile) {
+            lenis = new Lenis();
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
             requestAnimationFrame(raf);
         }
-        requestAnimationFrame(raf);
 
         const heroText = document.getElementById('heroText');
         const timelineProgress = document.getElementById('timelineProgress');
         const timelineContainer = document.getElementById('timelineContainer');
 
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            if (scrollY < 1000) {
-                const ratio = Math.min(scrollY / 800, 1);
-                heroText.style.opacity = 1 - (ratio * 1.2);
-                heroText.style.filter = `blur(${ratio * 30}px) contrast(${1 + ratio})`;
-                heroText.style.transform = `translateY(${ratio * 200}px) scale(${1 + ratio * 0.4})`;
-                heroText.style.letterSpacing = `${ratio * 3}rem`;
-            }
-        }, { passive: true });
+        // Hero disintegrate — desktop only, rAF-throttled
+        if (!isMobile && heroText) {
+            let rafPending = false;
+            window.addEventListener('scroll', () => {
+                if (rafPending) return;
+                rafPending = true;
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    if (scrollY < 1000) {
+                        const ratio = Math.min(scrollY / 800, 1);
+                        heroText.style.opacity = 1 - (ratio * 1.2);
+                        heroText.style.filter = `blur(${ratio * 30}px) contrast(${1 + ratio})`;
+                        heroText.style.transform = `translateY(${ratio * 200}px) scale(${1 + ratio * 0.4})`;
+                        heroText.style.letterSpacing = `${ratio * 3}rem`;
+                    }
+                    rafPending = false;
+                });
+            }, { passive: true });
+        }
 
-        // Timeline progress + dot activation
+        // Timeline progress + dot activation — rAF-throttled
         const timelineNodes = document.querySelectorAll('.timeline-node');
         const timelineLine = document.querySelector('.timeline-line');
 
+        let tlRafPending = false;
         function updateTimelineProgress() {
             const section = document.getElementById('journey');
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
@@ -719,16 +732,11 @@
             const progress = Math.min(Math.max(scrolled / (sectionHeight - window.innerHeight), 0), 1);
             timelineProgress.style.height = (progress * 100) + '%';
 
-            // Get the pixel height of the progress line relative to the timeline container
-            const lineTop = timelineLine.getBoundingClientRect().top + window.scrollY;
-            const progressPx = timelineProgress.getBoundingClientRect().height;
-
             timelineNodes.forEach(node => {
                 const dot = node.querySelector('.timeline-dot-outer');
                 const inner = node.querySelector('.timeline-dot-inner');
                 const dotTop = dot.getBoundingClientRect().top + window.scrollY;
                 const dotMid = dotTop + dot.offsetHeight / 2;
-                // activate when the midpoint of the dot is above the viewport center
                 const threshold = window.scrollY + window.innerHeight * 0.6;
                 if (dotMid <= threshold) {
                     dot.classList.add('active');
@@ -738,8 +746,13 @@
                     inner.classList.remove('active');
                 }
             });
+            tlRafPending = false;
         }
-        window.addEventListener('scroll', updateTimelineProgress, { passive: true });
+        window.addEventListener('scroll', () => {
+            if (tlRafPending) return;
+            tlRafPending = true;
+            requestAnimationFrame(updateTimelineProgress);
+        }, { passive: true });
         updateTimelineProgress();
         // Hamburger menu
         const hamburger = document.getElementById('hamburger');
