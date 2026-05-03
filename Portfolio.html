@@ -25,6 +25,11 @@
             cursor: url('paper_airplane.png') 16 16, pointer !important;
         }
 
+        @media (hover: none) and (pointer: coarse) {
+            * { cursor: auto !important; }
+            a, button, .logo-box, .project-card, .social-link, .skill-card, nav a { cursor: pointer !important; }
+        }
+
         .gold-text { color: var(--gold); }
 
         html, body {
