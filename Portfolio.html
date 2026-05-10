@@ -51,9 +51,14 @@
         }
 
         .nav-glass {
-            background: rgba(3, 3, 3, 0.7);
+            background: rgba(3, 3, 3, 0.9);
             backdrop-filter: saturate(180%) blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        @media (max-width: 767px) {
+            .nav-glass {
+                background: rgba(3, 3, 3, 0.98);
+            }
         }
 
         .disintegrate-layer {
@@ -66,7 +71,14 @@
         }
         @media (max-width: 767px) {
             .timeline-container {
-                padding-top: 2rem;
+                padding-top: 0;
+            }
+            .timeline-year-row {
+                margin-left: 6rem;
+                margin-bottom: 1rem;
+            }
+            .timeline-node > div:last-child {
+                margin-left: 8rem;
             }
         }
         .timeline-line {
@@ -422,7 +434,7 @@
                 <h2 class="bebas text-5xl md:text-9xl italic gold-text tracking-tighter">THE JOURNEY</h2>
             </div>
 
-            <div id="timelineContainer" class="timeline-container pl-24 md:pl-0">
+            <div id="timelineContainer" class="timeline-container md:pl-0">
                 <div class="timeline-line">
                     <div id="timelineProgress" class="timeline-progress"></div>
                 </div>
@@ -437,7 +449,7 @@
                             <div class="timeline-dot-inner w-2 md:w-3 h-2 md:h-3 rounded-full bg-[#D4AF37] animate-pulse"></div>
                         </div>
                     </div>
-                    <div class="md:w-[45%] w-full pl-24 md:pl-0 md:pr-20 text-left md:text-right">
+                    <div class="md:w-[45%] w-full md:pl-0 md:pr-20 text-left md:text-right">
                         <div class="project-card p-6 md:p-10">
                             <h4 class="text-lg md:text-2xl font-bold uppercase gold-text mb-3 md:mb-4 italic">MIT: CS, Data Science & Economics</h4>
                             <p class="text-sm md:text-base text-gray-100 font-medium leading-relaxed">Enrolled at MIT pursuing Computer Science, Data Science, and Economics. Launched Plateform, personalized nutrition tracking as easy as Apple Pay, ranking real-time campus menus against your goals. Shipped to students at MIT and UC Riverside. Applied to Y Combinator Summer 2026.</p>
@@ -455,7 +467,7 @@
                             <div class="timeline-dot-inner w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/20"></div>
                         </div>
                     </div>
-                    <div class="md:w-[45%] w-full pl-24 md:pl-0 md:pl-20">
+                    <div class="md:w-[45%] w-full md:pl-0 md:pl-20">
                         <div class="project-card p-6 md:p-10">
                             <h4 class="text-lg md:text-2xl font-bold uppercase gold-text mb-3 md:mb-4 italic">HackMIT, IT Work & National Champion</h4>
                             <p class="text-sm md:text-base text-gray-100 font-medium leading-relaxed">Built RefGraph at HackMIT: a graph-native citation explorer powered by AI. Won National Online Champions in Academic Decathlon. Applied to 40+ programs, got into 13 fly-in programs, and traveled across 9 different states to visit campuses. Accepted to QuestBridge.</p>
@@ -473,7 +485,7 @@
                             <div class="timeline-dot-inner w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/20"></div>
                         </div>
                     </div>
-                    <div class="md:w-[45%] w-full pl-24 md:pl-0 md:pr-20 text-left md:text-right">
+                    <div class="md:w-[45%] w-full md:pl-0 md:pr-20 text-left md:text-right">
                         <div class="project-card p-6 md:p-10">
                             <h4 class="text-lg md:text-2xl font-bold uppercase gold-text mb-3 md:mb-4 italic">Research, Robotics & Hospital Volunteer</h4>
                             <p class="text-sm md:text-base text-gray-100 font-medium leading-relaxed">Received 2x Silver Awards at RCSEF for Nystagmus vision software. Led FTC Robotics 8472 as Team Captain, writing Java for complex autonomous tasks and earning up to 150pts. Volunteered 4-8hrs/week at Loma Linda University Hospital, working the front line of healthcare and developing a drive to fix failures in life-critical systems. Founded the school Coding Club.</p>
@@ -491,7 +503,7 @@
                             <div class="timeline-dot-inner w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-white/20"></div>
                         </div>
                     </div>
-                    <div class="md:w-[45%] w-full pl-24 md:pl-0 md:pl-20">
+                    <div class="md:w-[45%] w-full md:pl-0 md:pl-20">
                         <div class="project-card p-6 md:p-10">
                             <h4 class="text-lg md:text-2xl font-bold uppercase gold-text mb-3 md:mb-4 italic">Egypt → California</h4>
                             <p class="text-sm md:text-base text-gray-100 font-medium leading-relaxed italic mb-4 md:mb-6">
