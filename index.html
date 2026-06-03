@@ -506,7 +506,7 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 01</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 01</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">SPECTR</h3>
                         <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">The payment integrity platform that finds compliance failures before the money leaves, and generates the compliance reports agencies are legally required to file.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
@@ -528,7 +528,7 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 02</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 02</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">PLATEFORM</h3>
                         <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Personalized nutrition tracking, as easy as Apple Pay. Real-time dining hall menus ranked against your goals.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
@@ -550,7 +550,7 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 03</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 03</p>
                         <h3 class="bebas text-7xl italic leading-none mb-6">NYSTAGMUS VISION</h3>
                         <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed mb-12 text-white tracking-wider">
                             Computer vision software counter-oscillating text to match eye movement. Awarded 2x Silver at RCSEF.
@@ -574,7 +574,7 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                    <p class="mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 04</p>
+                    <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 04</p>
                     <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">REFGRAPH</h3>
                     <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Graph-native academic citation explorer. AI extracts concepts, maps citation networks, surfaces hidden connections between papers.</p>
                     <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
@@ -593,7 +593,7 @@
                 </div>
 
                 <div id="writing" class="project-card p-12 flex flex-col min-h-[500px]">
-                    <p class="mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 05</p>
+                    <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 05</p>
                     <h3 class="bebas text-8xl italic leading-none mb-6">THE TECH</h3>
                     <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Staff writer at MIT's independent student newspaper since 1881. Covering technology, campus life, and the ideas shaping the future.</p>
                     <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
@@ -768,6 +768,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             const spectrCard = document.getElementById('spectr-card');
             if (spectrCard) spectrCard.style.display = SHOW_SPECTR ? '' : 'none';
+            // Renumber visible project node labels sequentially
+            let n = 1;
+            document.querySelectorAll('.project-node-label').forEach(el => {
+                const card = el.closest('.project-card, .project-card-wide');
+                if (card && card.style.display === 'none') return;
+                el.textContent = 'SYSTEM NODE ' + String(n++).padStart(2, '0');
+            });
         });
 
         const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
