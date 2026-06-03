@@ -500,7 +500,7 @@
             <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-10 md:mb-24">PROJECTS</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-                <div class="project-card flex flex-col min-h-[500px] overflow-hidden">
+                <div id="spectr-card" class="project-card flex flex-col min-h-[500px] overflow-hidden">
                     <div class="relative h-64 overflow-hidden">
                         <img src="uploads/spectr-screenshot.png" alt="SPECTR" class="w-full h-full object-cover object-top">
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
@@ -763,6 +763,13 @@
     </footer>
 
     <script>
+        // Toggle SPECTR project visibility — set to true to showcase it
+        const SHOW_SPECTR = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            const spectrCard = document.getElementById('spectr-card');
+            if (spectrCard) spectrCard.style.display = SHOW_SPECTR ? '' : 'none';
+        });
+
         const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
         // Lenis smooth scroll — desktop only
