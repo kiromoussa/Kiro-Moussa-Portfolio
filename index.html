@@ -590,6 +590,28 @@
                     </div>
                 </div>
 
+                <div class="project-card flex flex-col min-h-[500px] overflow-hidden">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="uploads/signalvector-screenshot.png" alt="SignalVector" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
+                    </div>
+                    <div class="p-12 flex flex-col flex-1">
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 05</p>
+                        <h3 class="bebas text-7xl italic leading-none mb-6">SIGNALVECTOR</h3>
+                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Prediction market trading engine. Five independent signal sources across Kalshi & Polymarket, Kelly-sized positions, ten risk checks per order.</p>
+                        <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
+                            <div class="space-y-2">
+                                <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
+                                <div class="flex gap-4">
+                                    <span class="text-[10px] font-bold gold-text uppercase">FinTech</span>
+                                    <span class="text-[10px] font-bold gold-text uppercase">Prediction Markets</span>
+                                </div>
+                            </div>
+                            <a href="https://signalvector.live" target="_blank" class="px-8 py-3 border border-white/10 hover:border-[#D4AF37] transition-all text-[10px] mono font-bold tracking-widest uppercase text-white">Launch ↗</a>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -746,7 +768,7 @@
 
     <script>
         // Toggle SPECTR project visibility — set to true to showcase it
-        const SHOW_SPECTR = false;
+        const SHOW_SPECTR = true;
         document.addEventListener('DOMContentLoaded', () => {
             const spectrCard = document.getElementById('spectr-card');
             if (spectrCard) spectrCard.style.display = SHOW_SPECTR ? '' : 'none';
