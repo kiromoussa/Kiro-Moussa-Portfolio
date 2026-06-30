@@ -1,0 +1,42 @@
+# Kiro Moussa
+
+> Kiro Moussa is a student, founder, and designer at MIT (Class of 2029), studying Computer Science, Economics & Data Science. He builds AI-native products across GovTech, FinTech, and developer tools, and is focused on creating impact that actually changes and helps the world.
+
+Born in Egypt and raised through the 2011 Revolution before moving to California at age 7, Kiro is bilingual in Arabic and English. He started running Minecraft servers on Windows Server 2016 at age 12 — his shift from user to system architect. He is a staff writer at The Tech (MIT's independent newspaper since 1881), was accepted into the Y Combinator Startup School June 2026 cohort, and was selected for the TekTrek student-founder residency in San Francisco (Summer 2026).
+
+Canonical site: https://kiro.city
+Markdown version of this profile: https://kiro.city/kiro.md
+Contact: kiro@mit.edu
+
+## Projects
+
+- [easymd](https://easymd.tech): "Google Docs for Markdown, with MCP built in." Real-time collaborative Markdown editing that connects to any AI in one line and auto-syncs every .md file in your repo. Developer tooling / Model Context Protocol (MCP).
+- [SPECTR](https://spectr.llc): Payment integrity and fraud-detection platform for city governments and public-fund compliance — finds compliance failures before money leaves and generates the reports agencies are legally required to file. Positioned against the $800B+ federal grant stack. GovTech. (Founder)
+- [SignalVector](https://signalvector.live): Prediction-market trading engine with five independent signal sources across Kalshi & Polymarket, Kelly-sized positions, and ten risk checks per order. FinTech.
+- [Nystagmus Vision](https://sites.google.com/view/nystagmuskiro/): Computer-vision software that counter-oscillates on-screen text to match involuntary eye movement, stabilizing reading for patients with nystagmus. Awarded 2x Silver at RCSEF.
+- [Plateform](https://plateform-two.vercel.app/): AI-native campus dining operations platform — personalized nutrition tracking as easy as Apple Pay, with real-time dining-hall menus ranked against your goals. Reached ~100 active MIT students and supported menus for 10+ colleges by May 2026. Built with React + Supabase.
+- [RefGraph](https://plume.hackmit.org/gallery?search=refgraph&hackathon_id=hack-2025&page=1): Graph-native academic citation explorer built at HackMIT 2025. AI extracts concepts, maps citation networks, and surfaces hidden connections between research papers. Built with Python, PyTorch.
+- FirstPass: AI-native building-code compliance tool for architects, with Excalidraw integration for plan submission and automated code checking.
+
+## Background & timeline
+
+- Origins: Born in Egypt; grew up during the 2011 Revolution; moved to California at 7; bilingual in Arabic & English.
+- 2023 — Research: Built Nystagmus Vision (2x Silver, RCSEF). Led FTC Robotics Team 8472 as Captain, writing Java for autonomous routines scoring up to 150 pts. Volunteered 4–8 hrs/week at Loma Linda University Hospital; founded the school Coding Club.
+- 2024 — National Online Champions in Academic Decathlon. Accepted to QuestBridge National College Match. Applied to 40+ programs; selected for 13 fly-in programs across 9 states.
+- 2025 — Enrolled at MIT (Computer Science, Data Science & Economics). Staff writer at The Tech. Built RefGraph at HackMIT 2025.
+- 2026 — Building Plateform, FirstPass, and SPECTR. Accepted to Y Combinator Startup School (June 2026 cohort). Selected for the TekTrek SF founder residency (Summer 2026); presented SPECTR on day one.
+
+## Skills
+
+- Programming: Python, Java, Swift, C, JavaScript, TypeScript, Julia, MATLAB
+- Frameworks & platforms: React, Next.js, Tailwind, Supabase, Vercel
+- Creative & systems: Figma, GitHub, Premiere, Photoshop, Illustrator, VirtualBox, Arch Linux, Canva
+
+## Links
+
+- Portfolio: https://kiro.city
+- Email: kiro@mit.edu
+- GitHub: https://github.com/kiromoussa
+- LinkedIn: https://linkedin.com/in/kiromoussa
+- Instagram: https://instagram.com/kiromoussa
+- Location: Cambridge / Boston, MA (42.3601° N, 71.0589° W)

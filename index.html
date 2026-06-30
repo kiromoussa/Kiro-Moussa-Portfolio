@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiro Moussa | kiro.city</title>
+    <meta name="description" content="Kiro Moussa — student, founder, and designer at MIT (CS, Economics & Data Science). Builds AI-native products across GovTech, FinTech, and developer tools.">
+    <link rel="alternate" type="text/markdown" href="/kiro.md" title="Kiro Moussa (Markdown)">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kiro Moussa",
+      "url": "https://kiro.city",
+      "email": "kiro@mit.edu",
+      "jobTitle": "Student, Founder, Designer",
+      "description": "Student, founder, and designer at MIT studying Computer Science, Economics & Data Science. Builds AI-native products across GovTech, FinTech, and developer tools.",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Massachusetts Institute of Technology" },
+      "knowsLanguage": ["en", "ar"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Cambridge", "addressRegion": "MA", "addressCountry": "US" },
+      "sameAs": [
+        "https://github.com/kiromoussa",
+        "https://linkedin.com/in/kiromoussa",
+        "https://instagram.com/kiromoussa"
+      ]
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -262,6 +283,7 @@
                 <a href="#projects" class="hover:text-[#D4AF37] transition-colors">WORK</a>
                 <a href="#journey" class="hover:text-[#D4AF37] transition-colors">JOURNEY</a>
                 <a href="#skills" class="hover:text-[#D4AF37] transition-colors">SKILLS</a>
+                <a href="#ask-ai" class="hover:text-[#D4AF37] transition-colors">ASK AI</a>
                 <a href="#contact" class="px-5 py-2 border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all text-white">CONTACT</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -275,6 +297,7 @@
         <a href="#projects" onclick="closeMenu()">WORK</a>
         <a href="#journey" onclick="closeMenu()">JOURNEY</a>
         <a href="#skills" onclick="closeMenu()">SKILLS</a>
+        <a href="#ask-ai" onclick="closeMenu()">ASK AI</a>
         <a href="#contact" onclick="closeMenu()" style="color:#D4AF37">CONTACT</a>
     </div>
 
@@ -764,6 +787,53 @@
         </div>
     </section>
 
+    <!-- Ask AI Section -->
+    <section id="ask-ai" class="py-20 md:py-40 px-6 md:px-10 border-t border-white/10 bg-black">
+        <div class="max-w-[1600px] mx-auto">
+            <p class="mono font-bold text-gray-300 mb-6 tracking-widest uppercase text-[10px]">AI-NATIVE</p>
+            <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-8 leading-none">ASK AI ABOUT ME</h2>
+            <p class="open-sans text-sm md:text-base text-gray-300 max-w-2xl mb-12 leading-relaxed">Don't just read — ask. Open your assistant of choice with a question pre-loaded, and it'll pull from a structured, machine-readable profile of my work. For anything else, grab the Markdown.</p>
+
+            <div class="flex flex-wrap gap-4 mb-10">
+                <a href="https://claude.ai/new?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">Claude</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
+                </a>
+                <a href="https://chatgpt.com/?hints=search&q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">ChatGPT</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
+                </a>
+                <a href="https://www.perplexity.ai/search?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">Perplexity</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
+                </a>
+                <button type="button" data-ask-gemini class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">Gemini</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">copy + open ↗</span>
+                </button>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 pt-8 border-t border-white/5">
+                <p class="mono text-[10px] font-bold text-gray-500 uppercase tracking-widest mr-2">Any other AI</p>
+                <button type="button" data-copy-md class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">Copy as Markdown</span>
+                    <span data-copy-md-icon class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">⧉</span>
+                </button>
+                <a href="kiro.md" target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">View .md</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
+                </a>
+                <a href="llms.txt" target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                    <span class="mono text-xs font-bold tracking-widest uppercase text-white">llms.txt</span>
+                    <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask AI toast -->
+    <div id="askAiToast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-[#0a0a0a] border border-[#D4AF37]/40 mono text-[10px] uppercase tracking-widest text-white opacity-0 pointer-events-none transition-opacity duration-300" style="box-shadow:0 0 30px rgba(212,175,55,0.15);"></div>
+
     <!-- Footer -->
     <footer class="bg-black py-20 md:py-40 px-6 md:px-10 border-t border-[#D4AF37]/20 relative overflow-hidden">
         <div class="max-w-[1600px] mx-auto text-left">
@@ -888,6 +958,67 @@
             mobileMenu.classList.toggle('open');
             document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
         });
+
+        // ===== Ask AI: toast, clipboard, Gemini copy+open =====
+        const ASK_AI_PROMPT = "What can you tell me about Kiro Moussa? He's a student and founder at MIT (Computer Science, Economics & Data Science). His portfolio and an AI-readable profile are at https://kiro.city/llms.txt — summarize his background, his projects, and what makes him stand out.";
+
+        const toast = document.getElementById('askAiToast');
+        let toastTimer;
+        function showToast(msg) {
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.style.opacity = '1';
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 2600);
+        }
+
+        async function copyText(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (e) {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    return true;
+                } catch (e2) { return false; }
+            }
+        }
+
+        // Gemini has no prefill URL — copy the prompt, then open Gemini in a new tab.
+        const geminiBtn = document.querySelector('[data-ask-gemini]');
+        if (geminiBtn) {
+            geminiBtn.addEventListener('click', async () => {
+                const ok = await copyText(ASK_AI_PROMPT);
+                showToast(ok ? 'Prompt copied — paste it into Gemini' : 'Opening Gemini…');
+                window.open('https://gemini.google.com/app', '_blank', 'noopener');
+            });
+        }
+
+        // Copy the full profile as Markdown for any other assistant.
+        const copyMdBtn = document.querySelector('[data-copy-md]');
+        if (copyMdBtn) {
+            copyMdBtn.addEventListener('click', async () => {
+                let md;
+                try {
+                    const res = await fetch('kiro.md', { cache: 'no-store' });
+                    if (!res.ok) throw new Error('fetch failed');
+                    md = await res.text();
+                } catch (e) {
+                    md = 'Kiro Moussa — portfolio: https://kiro.city\nAI-readable profile: https://kiro.city/llms.txt\nMarkdown: https://kiro.city/kiro.md';
+                }
+                const ok = await copyText(md);
+                const icon = copyMdBtn.querySelector('[data-copy-md-icon]');
+                if (icon) { const prev = icon.textContent; icon.textContent = '✓'; setTimeout(() => { icon.textContent = prev; }, 2000); }
+                showToast(ok ? 'Markdown copied to clipboard' : 'Could not copy — open View .md instead');
+            });
+        }
     </script>
 </body>
 </html>
