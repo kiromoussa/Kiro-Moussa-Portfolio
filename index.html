@@ -299,6 +299,7 @@
         }
         .journey-collapse.open {
             opacity: 1;
+            max-height: none;
         }
     </style>
 </head>
@@ -407,14 +408,14 @@
         <!-- Professional Timeline -->
     <section id="journey" class="py-20 md:py-40 px-6 md:px-10 border-t border-white/10 bg-[#050505]">
         <div class="max-w-[1200px] mx-auto">
-            <button type="button" id="journeyToggle" class="journey-toggle w-full text-left mb-8 md:mb-16" aria-expanded="false" aria-controls="journeyCollapse">
+            <button type="button" id="journeyToggle" class="journey-toggle w-full text-left mb-8 md:mb-16" aria-expanded="true" aria-controls="journeyCollapse">
                 <div class="h-[1px] w-20 bg-[#D4AF37] flex-shrink-0"></div>
                 <h2 class="bebas journey-heading text-5xl md:text-9xl italic gold-text tracking-tighter">THE JOURNEY</h2>
                 <svg class="journey-toggle-chevron ml-auto w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
-            <p id="journeyHint" class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-12 md:mb-24">Tap to expand the timeline</p>
+            <p id="journeyHint" class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-12 md:mb-24">Tap to collapse the timeline</p>
 
-            <div id="journeyCollapse" class="journey-collapse" role="region" aria-labelledby="journeyToggle">
+            <div id="journeyCollapse" class="journey-collapse open" role="region" aria-labelledby="journeyToggle">
             <div id="timelineContainer" class="timeline-container pl-0 md:pl-0">
                 <div class="timeline-line">
                     <div id="timelineProgress" class="timeline-progress"></div>
@@ -1070,8 +1071,8 @@
                 journeyCollapse.style.maxHeight = 'none';
             }
         });
-        // Open the timeline automatically if the user navigates directly to #journey
-        if (window.location.hash === '#journey') toggleJourney(true);
+        // Open the timeline automatically on page load
+        toggleJourney(true);
         document.querySelectorAll('a[href="#journey"]').forEach(a => {
             a.addEventListener('click', () => toggleJourney(true));
         });
