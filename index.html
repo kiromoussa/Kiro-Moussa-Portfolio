@@ -136,6 +136,13 @@
         .logo-box .no-hover { filter: brightness(0) invert(1) !important; }
         .logo-box .wca-logo { filter: brightness(0) invert(1); }
         .logo-box:hover .wca-logo { filter: brightness(1) invert(0); }
+        /* Auto-cycle: .is-lit is the same look as hover, applied one logo at a time by JS */
+        .logo-box.is-lit {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.08);
+        }
+        .logo-box.is-lit .hover-color,
+        .logo-box.is-lit .wca-logo { filter: brightness(1) invert(0); }
 
         .project-card {
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -435,7 +442,7 @@
                         <div class="project-card p-10 space-y-6">
                             <div>
                                 <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ORIGINS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Born in <span class="gold-text font-black">Egypt</span>. Grew up during the <span class="gold-text font-black">2011 Revolution</span>. Moved to <span class="gold-text font-black">California at 7</span>. Bilingual in <span class="gold-text font-black">Arabic & English</span>, built between two worlds.</p>
+                                <p class="text-gray-100 font-medium leading-relaxed">Born in <span class="gold-text font-black">Egypt</span>. Moved to <span class="gold-text font-black">California at 7</span>. Bilingual in <span class="gold-text font-black">Arabic & English</span>, built between two worlds.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
                                 <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">FIRST BUILD</p>
@@ -872,18 +879,18 @@
         <div class="max-w-[1600px] mx-auto">
             <p class="mono font-bold text-gray-300 mb-6 tracking-widest uppercase text-[10px]">AI-NATIVE</p>
             <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-8 leading-none">ASK AI ABOUT ME</h2>
-            <p class="open-sans text-sm md:text-base text-gray-300 max-w-2xl mb-12 leading-relaxed">Don't just read — ask. Open your assistant of choice with a question pre-loaded, and it'll pull from a structured, machine-readable profile of my work. For anything else, grab the Markdown.</p>
+            <p class="open-sans text-sm md:text-base text-gray-300 max-w-2xl mb-12 leading-relaxed">Don't just read, ask. Open your assistant of choice with a question pre-loaded, and it'll pull from a structured, machine-readable profile of my work. For anything else, grab the Markdown.</p>
 
             <div class="flex flex-wrap gap-4 mb-10">
-                <a href="https://claude.ai/new?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://claude.ai/new?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">Claude</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
-                <a href="https://chatgpt.com/?hints=search&q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://chatgpt.com/?hints=search&q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">ChatGPT</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
-                <a href="https://www.perplexity.ai/search?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%20%E2%80%94%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://www.perplexity.ai/search?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">Perplexity</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
@@ -1085,8 +1092,52 @@
             if (e.matches) closeMenu();
         });
 
+        // ===== Hero credential logos: color in one by one, pause and follow the cursor on hover =====
+        (function () {
+            const boxes = Array.from(document.querySelectorAll('.hero-credentials .logo-box'))
+                .filter(b => b.querySelector('img'));
+            if (boxes.length < 2) return;
+            const grid = boxes[0].parentElement;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const STEP_MS = 1100;
+            let i = -1, timer = null, paused = false;
+
+            function clearLit() { boxes.forEach(b => b.classList.remove('is-lit')); }
+            function step() {
+                clearLit();
+                i = (i + 1) % boxes.length;
+                boxes[i].classList.add('is-lit');
+            }
+            function start() {
+                if (reduceMotion || timer || paused) return;
+                step();
+                timer = setInterval(step, STEP_MS);
+            }
+            function stop() {
+                clearInterval(timer);
+                timer = null;
+                clearLit();
+            }
+
+            // Cursor over the grid: freeze the sweep; only the hovered logo colors (via :hover).
+            grid.addEventListener('mouseenter', () => { paused = true; stop(); });
+            grid.addEventListener('mouseleave', () => { paused = false; start(); });
+
+            // Run from load; pause while the hero is scrolled away or the tab is hidden.
+            let offscreen = false;
+            function sync() { (offscreen || document.hidden) ? stop() : start(); }
+            start();
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(entries => {
+                    offscreen = !entries[0].isIntersecting;
+                    sync();
+                }, { threshold: 0.1 }).observe(grid);
+            }
+            document.addEventListener('visibilitychange', sync);
+        })();
+
         // ===== Ask AI: toast, clipboard, Gemini copy+open =====
-        const ASK_AI_PROMPT = "What can you tell me about Kiro Moussa? He's a student and founder at MIT (Computer Science, Economics & Data Science). His portfolio and an AI-readable profile are at https://kiro.city/llms.txt — summarize his background, his projects, and what makes him stand out.";
+        const ASK_AI_PROMPT = "What can you tell me about Kiro Moussa? He's a student and founder at MIT (Computer Science, Economics & Data Science) building AI-native products, from The Ear Company's AI glasses for cochlear-implant wearers and Deaf signers, to Atlas, a living archive of the Earth, easymd, and SPECTR. He was accepted into Y Combinator Startup School (June 2026) and the TekTrek founder residency in San Francisco. His portfolio and an AI-readable profile are at https://kiro.city/llms.txt, so read it and summarize his background, his projects, and what makes him stand out.";
 
         const toast = document.getElementById('askAiToast');
         let toastTimer;

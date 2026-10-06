@@ -16,13 +16,21 @@ Computer Science, Economics & Data Science — MIT, Class of 2029.
 
 ## About
 
-Kiro Moussa builds AI-native products across GovTech, FinTech, and developer tooling. Born in Egypt and raised through the 2011 Revolution before moving to California at age 7, he's bilingual in Arabic and English and built between two worlds. He got his first taste of owning infrastructure at 12, running Minecraft servers on Windows Server 2016 — the shift from user to system architect. A low-income background taught relentless resourcefulness: squeeze everything from every opportunity.
+Kiro Moussa builds AI-native products across AI hardware and accessibility, GovTech, FinTech, and developer tooling. Born in Egypt and moved to California at age 7, he's bilingual in Arabic and English and built between two worlds. He got his first taste of owning infrastructure at 12, running Minecraft servers on Windows Server 2016 — the shift from user to system architect. A low-income background taught relentless resourcefulness: squeeze everything from every opportunity.
 
 He is a staff writer at *The Tech* (MIT's independent newspaper since 1881), was accepted into the **Y Combinator Startup School** June 2026 cohort, and was selected for the **TekTrek** student-founder residency in San Francisco (Summer 2026), where he presented SPECTR on day one.
 
 ---
 
 ## Projects
+
+### The Ear Company — https://ear-company.vercel.app/
+AI hardware for bionic enhancement. Leo, the first system, is a pair of AI glasses that pulls one talker out of a crowded room for a cochlear-implant wearer and gives a Deaf signer a spoken voice back in it.
+*Type: AI Hardware, Accessibility.*
+
+### Atlas — https://atlas-landing-theta.vercel.app/
+The first living archive of the Earth.
+*Type: Archive, Earth.*
 
 ### easymd — https://easymd.tech
 Google Docs for Markdown, with MCP built in. Real-time collaborative editing that connects to any AI in one line, auto-syncing every `.md` in your repo.
@@ -55,7 +63,7 @@ AI-native building-code compliance tool for architects, with Excalidraw integrat
 
 ## Journey
 
-**Roots — Origins.** Born in Egypt. Grew up during the 2011 Revolution. Moved to California at 7. Bilingual in Arabic & English.
+**Roots — Origins.** Born in Egypt. Moved to California at 7. Bilingual in Arabic & English.
 
 **2023**
 - *Research:* Built Nystagmus Vision; 2x Silver at RCSEF.
@@ -72,7 +80,7 @@ AI-native building-code compliance tool for architects, with Excalidraw integrat
 - Built RefGraph at HackMIT 2025.
 
 **2026**
-- Building Plateform, FirstPass, and SPECTR.
+- Building The Ear Company, Atlas, easymd, Plateform, FirstPass, and SPECTR.
 - Accepted to Y Combinator Startup School (June 2026 cohort).
 - Selected for the TekTrek SF founder residency (Summer 2026).
 

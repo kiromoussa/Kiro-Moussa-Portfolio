@@ -1,8 +1,8 @@
 # Kiro Moussa
 
-> Kiro Moussa is a student, founder, and designer at MIT (Class of 2029), studying Computer Science, Economics & Data Science. He builds AI-native products across GovTech, FinTech, and developer tools, and is focused on creating impact that actually changes and helps the world.
+> Kiro Moussa is a student, founder, and designer at MIT (Class of 2029), studying Computer Science, Economics & Data Science. He builds AI-native products across AI hardware and accessibility, GovTech, FinTech, and developer tools, and is focused on creating impact that actually changes and helps the world.
 
-Born in Egypt and raised through the 2011 Revolution before moving to California at age 7, Kiro is bilingual in Arabic and English. He started running Minecraft servers on Windows Server 2016 at age 12 — his shift from user to system architect. He is a staff writer at The Tech (MIT's independent newspaper since 1881), was accepted into the Y Combinator Startup School June 2026 cohort, and was selected for the TekTrek student-founder residency in San Francisco (Summer 2026).
+Born in Egypt and moved to California at age 7, Kiro is bilingual in Arabic and English. He started running Minecraft servers on Windows Server 2016 at age 12 — his shift from user to system architect. He is a staff writer at The Tech (MIT's independent newspaper since 1881), was accepted into the Y Combinator Startup School June 2026 cohort, and was selected for the TekTrek student-founder residency in San Francisco (Summer 2026).
 
 Canonical site: https://kiro.city
 Markdown version of this profile: https://kiro.city/kiro.md
@@ -10,6 +10,8 @@ Contact: kiro@mit.edu
 
 ## Projects
 
+- [The Ear Company](https://ear-company.vercel.app/): AI hardware for bionic enhancement. Leo, the first system, is a pair of AI glasses that pulls one talker out of a crowded room for a cochlear-implant wearer and gives a Deaf signer a spoken voice back in it. AI Hardware / Accessibility.
+- [Atlas](https://atlas-landing-theta.vercel.app/): The first living archive of the Earth. Archive / Earth.
 - [easymd](https://easymd.tech): "Google Docs for Markdown, with MCP built in." Real-time collaborative Markdown editing that connects to any AI in one line and auto-syncs every .md file in your repo. Developer tooling / Model Context Protocol (MCP).
 - [SPECTR](https://spectr.llc): Payment integrity and fraud-detection platform for city governments and public-fund compliance — finds compliance failures before money leaves and generates the reports agencies are legally required to file. Positioned against the $800B+ federal grant stack. GovTech. (Founder)
 - [SignalVector](https://signalvector.live): Prediction-market trading engine with five independent signal sources across Kalshi & Polymarket, Kelly-sized positions, and ten risk checks per order. FinTech.
@@ -20,11 +22,11 @@ Contact: kiro@mit.edu
 
 ## Background & timeline
 
-- Origins: Born in Egypt; grew up during the 2011 Revolution; moved to California at 7; bilingual in Arabic & English.
+- Origins: Born in Egypt; moved to California at 7; bilingual in Arabic & English.
 - 2023 — Research: Built Nystagmus Vision (2x Silver, RCSEF). Led FTC Robotics Team 8472 as Captain, writing Java for autonomous routines scoring up to 150 pts. Volunteered 4–8 hrs/week at Loma Linda University Hospital; founded the school Coding Club.
 - 2024 — National Online Champions in Academic Decathlon. Accepted to QuestBridge National College Match. Applied to 40+ programs; selected for 13 fly-in programs across 9 states.
 - 2025 — Enrolled at MIT (Computer Science, Data Science & Economics). Staff writer at The Tech. Built RefGraph at HackMIT 2025.
-- 2026 — Building Plateform, FirstPass, and SPECTR. Accepted to Y Combinator Startup School (June 2026 cohort). Selected for the TekTrek SF founder residency (Summer 2026); presented SPECTR on day one.
+- 2026 — Building The Ear Company, Atlas, easymd, Plateform, FirstPass, and SPECTR. Accepted to Y Combinator Startup School (June 2026 cohort). Selected for the TekTrek SF founder residency (Summer 2026); presented SPECTR on day one.
 
 ## Skills
 
