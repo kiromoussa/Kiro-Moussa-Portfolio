@@ -18,7 +18,7 @@ Computer Science, Economics & Data Science — MIT, Class of 2029.
 
 Kiro Moussa builds AI-native products across AI hardware and accessibility, GovTech, FinTech, and developer tooling. Born in Egypt and moved to California at age 7, he's bilingual in Arabic and English and built between two worlds. He got his first taste of owning infrastructure at 12, running Minecraft servers on Windows Server 2016 — the shift from user to system architect. A low-income background taught relentless resourcefulness: squeeze everything from every opportunity.
 
-He is a staff writer at *The Tech* (MIT's independent newspaper since 1881), was accepted into the **Y Combinator Startup School** June 2026 cohort, and was selected for the **TekTrek** student-founder residency in San Francisco (Summer 2026), where he presented SPECTR on day one.
+He is a staff writer at *The Tech* (MIT's independent newspaper since 1881).
 
 ---
 
@@ -81,8 +81,6 @@ AI-native building-code compliance tool for architects, with Excalidraw integrat
 
 **2026**
 - Building The Ear Company, Atlas, easymd, Plateform, FirstPass, and SPECTR.
-- Accepted to Y Combinator Startup School (June 2026 cohort).
-- Selected for the TekTrek SF founder residency (Summer 2026).
 
 ---
 

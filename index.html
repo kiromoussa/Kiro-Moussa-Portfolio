@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiro Moussa | kiro.city</title>
-    <meta name="description" content="Kiro Moussa — student, founder, and designer at MIT (CS, Economics & Data Science). Builds AI-native products across GovTech, FinTech, and developer tools.">
+    <meta name="description" content="Kiro Moussa: student, founder, and designer at MIT (CS, Economics & Data Science). Builds AI-native products across GovTech, FinTech, and developer tools.">
     <link rel="alternate" type="text/markdown" href="/kiro.md" title="Kiro Moussa (Markdown)">
     <script type="application/ld+json">
     {
@@ -65,8 +65,6 @@
         .open-sans { font-family: 'Open Sans', sans-serif; }
 
         .city-gradient {
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
             position: fixed;
             inset: 0;
             z-index: -1;
@@ -100,7 +98,6 @@
         .timeline-progress {
             width: 2px;
             background: var(--gold);
-            box-shadow: 0 0 15px var(--gold);
             position: absolute;
             left: -0.5px;
             top: 0;
@@ -146,14 +143,11 @@
 
         .project-card {
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(15, 15, 15, 0.4);
-            backdrop-filter: blur(10px);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #0b0b0b;
+            transition: border-color 0.2s ease;
         }
         .project-card:hover {
-            border-color: rgba(212, 175, 55, 0.5);
-            background: rgba(20, 20, 20, 0.6);
-            transform: scale(1.01);
+            border-color: rgba(255, 255, 255, 0.25);
         }
 
         .social-link {
@@ -190,14 +184,13 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(212,175,55,0.04) 100%);
+            background: rgba(255,255,255,0.03);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .skill-card:hover {
             border-color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+
         }
         .skill-card:hover::after {
             opacity: 1;
@@ -231,7 +224,6 @@
         .timeline-dot-outer.active {
             border-color: #D4AF37 !important;
             border-width: 2px !important;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
             transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
         .timeline-dot-inner.active {
@@ -263,7 +255,7 @@
 
         /* Mobile */
         @media (max-width: 767px) {
-            /* Hero: 2-col layout — small circle photo | heading text */
+            /* Hero: 2-col layout, small circle photo | heading text */
             header { height: auto !important; min-height: 100svh; padding-top: 90px !important; padding-bottom: 100px !important; }
             #heroGrid { grid-template-columns: 1fr 76px !important; gap: 1rem !important; align-items: start !important; }
             #heroText { order: 0; grid-column: 1; grid-row: 1; }
@@ -317,7 +309,7 @@
     <nav class="fixed top-0 w-full z-[100] nav-glass px-6 md:px-10 py-5">
         <div class="max-w-[1600px] mx-auto flex justify-between items-center">
             <a href="#" class="bebas text-3xl tracking-tighter gold-text">KIRO MOUSSA</a>
-            <div class="hidden md:flex space-x-12 items-center text-[10px] font-extrabold tracking-[0.3em] mono uppercase text-white">
+            <div class="hidden md:flex space-x-12 items-center text-[10px] font-extrabold tracking-[0.15em] mono uppercase text-white">
                 <a href="#projects" class="hover:text-[#D4AF37] transition-colors">WORK</a>
                 <a href="#journey" class="hover:text-[#D4AF37] transition-colors">JOURNEY</a>
                 <a href="#skills" class="hover:text-[#D4AF37] transition-colors">SKILLS</a>
@@ -352,7 +344,7 @@
                     Hi, I'm<br><span class="gold-text">Kiro</span>
                 </h1>
                 <div class="mt-8 md:mt-12 space-y-4 md:space-y-6">
-                    <p class="mono text-[11px] font-bold text-gray-200 tracking-[0.4em] uppercase">COMPUTER SCIENCE, ECONOMICS & DATA SCIENCE MIT 2029</p>
+                    <p class="mono text-[11px] font-bold text-gray-200 tracking-[0.15em] uppercase">COMPUTER SCIENCE, ECONOMICS & DATA SCIENCE MIT 2029</p>
                     <div class="flex space-x-8">
                         <a href="https://linkedin.com/in/kiromoussa" class="social-link">
                             <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -375,7 +367,7 @@
 
             <div class="hero-credentials lg:col-span-3">
                 <div class="space-y-6">
-                    <p class="mono text-[9px] font-bold text-gray-300 tracking-[0.4em] uppercase">CREDENTIALS</p>
+                    <p class="mono text-[9px] font-bold text-gray-300 tracking-[0.15em] uppercase">CREDENTIALS</p>
                     <div class="grid grid-cols-2 gap-3">
                         <div class="logo-box" title="MIT">
                             <img src="uploads/MIT_logo_2003-2023.svg.png" alt="MIT" class="hover-color">
@@ -393,21 +385,18 @@
                             <img src="wca-logo-transparent.png" alt="WCA" class="wca-logo">
                         </div>
                         <div class="logo-box border-none bg-transparent flex flex-col items-start justify-center p-0">
-                            <h2 class="text-2xl font-light uppercase tracking-tighter leading-[0.9] text-white">
-                                Student,<br>Founder,<br>Designer,<br>Human.
+                            <h2 class="text-xl font-light tracking-tight leading-[1.1] text-white">
+                                Student,<br>founder,<br>designer.
                             </h2>
                         </div>
-                    </div>
-                    <div class="pt-8 border-t border-white/10">
-                        <p class="text-[10px] mono text-gray-300 uppercase tracking-widest italic font-bold">Computer Science, Economics & Data Science</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="max-w-[1600px] mx-auto w-full absolute bottom-12 left-6 md:left-10 right-6 md:right-auto" style="z-index:1;">
-            <p class="text-xl md:text-3xl font-light uppercase tracking-tighter max-w-2xl leading-none text-white">
-                Focusing on creating an <span class="font-black italic gold-text">impact</span> to actually change and help the world.
+            <p class="text-lg md:text-2xl font-light max-w-2xl leading-snug text-white/90">
+                Currently building <span class="gold-text">The Ear Company</span>. Before that, Plateform, SPECTR, and the rest of what's below.
             </p>
         </div>
     </header>
@@ -420,7 +409,7 @@
                 <h2 class="bebas journey-heading text-5xl md:text-9xl italic gold-text tracking-tighter">THE JOURNEY</h2>
                 <svg class="journey-toggle-chevron ml-auto w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
-            <p id="journeyHint" class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-12 md:mb-24">Tap to collapse the timeline</p>
+            <p id="journeyHint" class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-12 md:mb-24">Tap to collapse the timeline</p>
 
             <div id="journeyCollapse" class="journey-collapse open" role="region" aria-labelledby="journeyToggle">
             <div id="timelineContainer" class="timeline-container pl-0 md:pl-0">
@@ -441,16 +430,16 @@
                     <div class="md:w-[45%] w-full pl-0 pr-0 md:pl-20">
                         <div class="project-card p-10 space-y-6">
                             <div>
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ORIGINS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Born in <span class="gold-text font-black">Egypt</span>. Moved to <span class="gold-text font-black">California at 7</span>. Bilingual in <span class="gold-text font-black">Arabic & English</span>, built between two worlds.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">ORIGINS</p>
+                                <p class="text-gray-300 leading-relaxed">Born in Egypt. Moved to California at 7. Bilingual in Arabic & English.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">FIRST BUILD</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">At <span class="gold-text font-black">12</span>, ran Minecraft servers on <span class="gold-text font-black">Windows Server 2016</span>, the shift from user to system architect. First taste of owning infrastructure.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">FIRST BUILD</p>
+                                <p class="text-gray-300 leading-relaxed">At 12, ran Minecraft servers on Windows Server 2016. First time running something other people relied on.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">DRIVE</p>
-                                <p class="text-gray-100 font-medium leading-relaxed italic text-white/70">"Low-income background taught relentless resourcefulness: squeeze everything from every opportunity."</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">DRIVE</p>
+                                <p class="text-gray-300 leading-relaxed italic text-white/70">"Low-income background taught relentless resourcefulness: squeeze everything from every opportunity."</p>
                             </div>
                         </div>
                     </div>
@@ -469,16 +458,16 @@
                     <div class="md:w-[45%] w-full pl-0 pr-0 md:pr-20 text-left md:text-right">
                         <div class="project-card p-10 space-y-6">
                             <div>
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">RESEARCH</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Built <span class="gold-text font-black">Nystagmus Vision</span>, computer vision software stabilizing text for patients with eye movement disorders. Awarded <span class="gold-text font-black">2x Silver at RCSEF</span>.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">RESEARCH</p>
+                                <p class="text-gray-300 leading-relaxed">Built Nystagmus Vision, computer vision software stabilizing text for patients with eye movement disorders. Awarded 2x Silver at RCSEF.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ROBOTICS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Led <span class="gold-text font-black">FTC Robotics Team 8472</span> as Team Captain, writing <span class="gold-text font-black">Java</span> for complex autonomous routines, scoring up to <span class="gold-text font-black">150 pts</span>.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">ROBOTICS</p>
+                                <p class="text-gray-300 leading-relaxed">Led FTC Robotics Team 8472 as Team Captain, writing Java for complex autonomous routines, scoring up to 150 pts.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">COMMUNITY</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Volunteered <span class="gold-text font-black">4–8 hrs/week</span> at <span class="gold-text font-black">Loma Linda University Hospital</span>. Founded the school <span class="gold-text font-black">Coding Club</span>.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">COMMUNITY</p>
+                                <p class="text-gray-300 leading-relaxed">Volunteered 4–8 hrs/week at Loma Linda University Hospital. Founded the school Coding Club.</p>
                             </div>
                         </div>
                     </div>
@@ -497,12 +486,12 @@
                     <div class="md:w-[45%] w-full pl-0 pr-0 md:pl-20">
                         <div class="project-card p-10 space-y-6">
                             <div>
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ACADEMICS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Won <span class="gold-text font-black">National Online Champions</span> in Academic Decathlon. Accepted to <span class="gold-text font-black">QuestBridge</span> National College Match.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">ACADEMICS</p>
+                                <p class="text-gray-300 leading-relaxed">Won National Online Champions in Academic Decathlon. Accepted to QuestBridge National College Match.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ADMISSIONS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Applied to <span class="gold-text font-black">40+ programs</span>. Selected for <span class="gold-text font-black">13 fly-in programs</span>, traveling across <span class="gold-text font-black">9 states</span> visiting campuses nationwide.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">ADMISSIONS</p>
+                                <p class="text-gray-300 leading-relaxed">Applied to 40+ programs. Selected for 13 fly-in programs, traveling across 9 states visiting campuses nationwide.</p>
                             </div>
                         </div>
                     </div>
@@ -521,12 +510,12 @@
                     <div class="md:w-[45%] w-full pl-0 pr-0 md:pr-20 text-left md:text-right">
                         <div class="project-card p-10 space-y-6">
                             <div>
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">ACADEMICS</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Enrolled at <span class="gold-text font-black">MIT</span> pursuing <span class="gold-text font-black">Computer Science, Data Science & Economics</span>. Staff writer at <span class="gold-text font-black">The Tech</span>, MIT's independent newspaper since 1881.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">ACADEMICS</p>
+                                <p class="text-gray-300 leading-relaxed">Enrolled at MIT pursuing Computer Science, Data Science & Economics. Staff writer at The Tech, MIT's independent newspaper since 1881.</p>
                             </div>
                             <div class="border-t border-white/10 pt-6">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30 mb-2">HACKATHON</p>
-                                <p class="text-gray-100 font-medium leading-relaxed">Built <span class="gold-text font-black">RefGraph</span> at <span class="gold-text font-black">HackMIT 2025</span>: an AI-powered citation network explorer surfacing hidden connections between research papers.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30 mb-2">HACKATHON</p>
+                                <p class="text-gray-300 leading-relaxed">Built RefGraph at HackMIT 2025: an AI-powered citation network explorer surfacing hidden connections between research papers.</p>
                             </div>
                         </div>
                     </div>
@@ -538,22 +527,17 @@
                         <h3 class="bebas timeline-year text-5xl md:text-9xl gold-text italic">2026</h3>
                     </div>
                     <div class="relative z-10 flex justify-center py-2 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:py-0">
-                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border-2 border-[#D4AF37] flex items-center justify-center shadow-[0_0_20px_var(--gold-glow)]">
-                            <div class="timeline-dot-inner w-3 h-3 rounded-full bg-[#D4AF37] animate-pulse"></div>
+                        <div class="timeline-dot-outer w-16 h-16 rounded-full bg-black border-2 border-[#D4AF37] flex items-center justify-center">
+                            <div class="timeline-dot-inner w-3 h-3 rounded-full bg-[#D4AF37]"></div>
                         </div>
                     </div>
                     <div class="md:w-[45%] w-full pl-0 pr-0 md:pl-20">
                         <div class="project-card p-10 space-y-8">
                             <div class="space-y-5">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30">STARTUPS BUILT</p>
-                                <p class="text-gray-100 font-medium leading-relaxed"><span class="gold-text font-black">Plateform</span>: Built and launched an AI-native campus dining operations platform; reached ~100 active student users at MIT and supported menus for 10+ colleges by May 2026.</p>
-                                <p class="text-gray-100 font-medium leading-relaxed"><span class="gold-text font-black">FirstPass</span>: Designed and built an AI-native building code compliance tool for architects, with Excalidraw integration for plan submission and automated code checking.</p>
-                                <p class="text-gray-100 font-medium leading-relaxed"><span class="gold-text font-black">SPECTR</span>: Founded and began building a fraud detection and payment management platform targeting city governments and public fund compliance, positioning against the $800B+ federal grant stack.</p>
-                            </div>
-                            <div class="space-y-5 border-t border-white/10 pt-8">
-                                <p class="mono text-[9px] font-black tracking-[0.35em] uppercase text-white/30">PROGRAMS & RECOGNITION</p>
-                                <p class="text-gray-100 font-medium leading-relaxed"><span class="gold-text font-black">Y Combinator Startup School</span>: Accepted into the YC Startup School June 2026 cohort.</p>
-                                <p class="text-gray-100 font-medium leading-relaxed"><span class="gold-text font-black">TekTrek</span>: Selected for a competitive 2-month student founder residency in San Francisco (Summer 2026); presented SPECTR on day one.</p>
+                                <p class="mono text-[9px] font-black tracking-[0.15em] uppercase text-white/30">STARTUPS BUILT</p>
+                                <p class="text-gray-300 leading-relaxed"><span class="text-white font-semibold">Plateform</span>: Built and launched an AI-native campus dining operations platform; reached ~100 active student users at MIT and supported menus for 10+ colleges by May 2026.</p>
+                                <p class="text-gray-300 leading-relaxed"><span class="text-white font-semibold">FirstPass</span>: Designed and built an AI-native building code compliance tool for architects, with Excalidraw integration for plan submission and automated code checking.</p>
+                                <p class="text-gray-300 leading-relaxed"><span class="text-white font-semibold">SPECTR</span>: Founded and began building a fraud detection and payment management platform targeting city governments and public fund compliance.</p>
                             </div>
                         </div>
                     </div>
@@ -574,9 +558,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 01</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">01</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">THE EAR COMPANY</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">AI hardware for bionic enhancement. Leo, our first system, is a pair of AI glasses that pulls one talker out of a crowded room for a cochlear-implant wearer and gives a Deaf signer a spoken voice back in it.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">AI hardware for bionic enhancement. Leo, our first system, is a pair of AI glasses that pulls one talker out of a crowded room for a cochlear-implant wearer and gives a Deaf signer a spoken voice back in it.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
@@ -596,9 +580,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 02</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">02</p>
                         <h3 class="bebas text-7xl italic leading-none mb-6">NYSTAGMUS VISION</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed mb-12 text-white tracking-wider">
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">
                             Computer vision software counter-oscillating text to match eye movement. Awarded 2x Silver at RCSEF.
                         </p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
@@ -620,9 +604,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 03</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">03</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">ATLAS</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">The first living archive of the Earth.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">The first living archive of the Earth.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
@@ -642,9 +626,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 04</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">04</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">EASYMD</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Google Docs for Markdown, with MCP built in. Real-time collaborative editing that connects to any AI in one line, auto-syncing every .md in your repo.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">Google Docs for Markdown, with MCP built in. Real-time collaborative editing that connects to any AI in one line, auto-syncing every .md in your repo.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
@@ -664,9 +648,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 05</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">05</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">SPECTR</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">The payment integrity platform that finds compliance failures before the money leaves, and generates the compliance reports agencies are legally required to file.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">The payment integrity platform that finds compliance failures before the money leaves, and generates the compliance reports agencies are legally required to file.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
@@ -686,9 +670,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 06</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">06</p>
                         <h3 class="bebas text-7xl italic leading-none mb-6">SIGNALVECTOR</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Prediction market trading engine. Five independent signal sources across Kalshi & Polymarket, Kelly-sized positions, ten risk checks per order.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">Prediction market trading engine. Five independent signal sources across Kalshi & Polymarket, Kelly-sized positions, ten risk checks per order.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Type</p>
@@ -708,9 +692,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 07</p>
+                        <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-4 tracking-[0.15em] uppercase text-white/40">07</p>
                         <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">PLATEFORM</h3>
-                        <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Personalized nutrition tracking, as easy as Apple Pay. Real-time dining hall menus ranked against your goals.</p>
+                        <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">Personalized nutrition tracking, as easy as Apple Pay. Real-time dining hall menus ranked against your goals.</p>
                         <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                             <div class="space-y-2">
                                 <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Stack</p>
@@ -730,9 +714,9 @@
                         <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 40%, rgba(15,15,15,0.95) 100%);"></div>
                     </div>
                     <div class="p-12 flex flex-col flex-1">
-                    <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.4em] uppercase text-white/40">SYSTEM NODE 08</p>
+                    <p class="project-node-label mono text-[10px] font-black text-gray-300 mb-8 tracking-[0.15em] uppercase text-white/40">08</p>
                     <h3 class="bebas text-8xl md:text-9xl italic leading-none mb-6">REFGRAPH</h3>
-                    <p class="open-sans text-sm font-semibold uppercase border-l border-[#D4AF37]/30 pl-8 leading-relaxed max-w-2xl mb-12 text-white tracking-wider">Graph-native academic citation explorer. AI extracts concepts, maps citation networks, surfaces hidden connections between papers.</p>
+                    <p class="text-base leading-relaxed max-w-2xl mb-12 text-gray-300">Graph-native academic citation explorer. AI extracts concepts, maps citation networks, surfaces hidden connections between papers.</p>
                     <div class="mt-auto flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0 items-start sm:items-end">
                         <div class="space-y-2">
                             <p class="mono text-[10px] font-bold text-gray-400 uppercase tracking-widest">Stack</p>
@@ -757,13 +741,12 @@
     <!-- Technical Proficiencies (Modern Grid) -->
     <section id="skills" class="py-20 md:py-40 px-6 md:px-10 border-t border-white/10 bg-[#030303]">
         <div class="max-w-[1600px] mx-auto">
-            <p class="mono font-bold text-gray-300 mb-6 tracking-widest uppercase text-[10px]">TECHNICAL PROFICIENCIES</p>
-            <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-10 md:mb-24 leading-none">SKILLS</h2>
+                        <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-10 md:mb-24 leading-none">SKILLS</h2>
             
             <div class="space-y-16">
                 <!-- Programming -->
                 <div>
-                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;programming&gt;</h3>
+                    <h3 class="mono text-xs text-gray-400 mb-6 tracking-[0.15em] uppercase">Languages</h3>
                     <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python">
@@ -798,12 +781,11 @@
                             <span>MATLAB</span>
                         </div>
                     </div>
-                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/programming&gt;</h3>
                 </div>
 
                 <!-- Tools & Platforms -->
                 <div>
-                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;itTools&gt;</h3>
+                    <h3 class="mono text-xs text-gray-400 mb-6 tracking-[0.15em] uppercase">Tools</h3>
                     <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg" alt="React">
@@ -836,12 +818,11 @@
                             <span>GITHUB</span>
                         </div>
                     </div>
-                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/itTools&gt;</h3>
                 </div>
 
                 <!-- Creative & Systems -->
                 <div>
-                    <h3 class="mono text-xs gold-text mb-6 tracking-[0.5em]">&lt;creativeAndSystems&gt;</h3>
+                    <h3 class="mono text-xs text-gray-400 mb-6 tracking-[0.15em] uppercase">Creative &amp; systems</h3>
                     <div class="skill-card-row flex flex-wrap gap-4 justify-start">
                         <div class="skill-card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro">
@@ -868,7 +849,6 @@
                             <span>CANVA</span>
                         </div>
                     </div>
-                    <h3 class="mono text-xs gold-text mt-6 tracking-[0.5em] text-right">&lt;/creativeAndSystems&gt;</h3>
                 </div>
             </div>
         </div>
@@ -877,20 +857,19 @@
     <!-- Ask AI Section -->
     <section id="ask-ai" class="py-20 md:py-40 px-6 md:px-10 border-t border-white/10 bg-black">
         <div class="max-w-[1600px] mx-auto">
-            <p class="mono font-bold text-gray-300 mb-6 tracking-widest uppercase text-[10px]">AI-NATIVE</p>
-            <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-8 leading-none">ASK AI ABOUT ME</h2>
-            <p class="open-sans text-sm md:text-base text-gray-300 max-w-2xl mb-12 leading-relaxed">Don't just read, ask. Open your assistant of choice with a question pre-loaded, and it'll pull from a structured, machine-readable profile of my work. For anything else, grab the Markdown.</p>
+                        <h2 class="bebas section-heading text-5xl md:text-9xl italic gold-text tracking-tighter mb-8 leading-none">ASK AI ABOUT ME</h2>
+            <p class="open-sans text-sm md:text-base text-gray-300 max-w-2xl mb-12 leading-relaxed">If you'd rather ask questions than scroll, these open an assistant with a question about me already filled in. It reads from a plain-text version of this site.</p>
 
             <div class="flex flex-wrap gap-4 mb-10">
-                <a href="https://claude.ai/new?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://claude.ai/new?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">Claude</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
-                <a href="https://chatgpt.com/?hints=search&q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://chatgpt.com/?hints=search&q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">ChatGPT</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
-                <a href="https://www.perplexity.ai/search?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20He%20was%20accepted%20into%20Y%20Combinator%20Startup%20School%20%28June%202026%29%20and%20the%20TekTrek%20founder%20residency%20in%20San%20Francisco.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
+                <a href="https://www.perplexity.ai/search?q=What%20can%20you%20tell%20me%20about%20Kiro%20Moussa%3F%20He%27s%20a%20student%20and%20founder%20at%20MIT%20%28Computer%20Science%2C%20Economics%20%26%20Data%20Science%29%20building%20AI-native%20products%2C%20from%20The%20Ear%20Company%27s%20AI%20glasses%20for%20cochlear-implant%20wearers%20and%20Deaf%20signers%2C%20to%20Atlas%2C%20a%20living%20archive%20of%20the%20Earth%2C%20easymd%2C%20and%20SPECTR.%20His%20portfolio%20and%20an%20AI-readable%20profile%20are%20at%20https%3A%2F%2Fkiro.city%2Fllms.txt%2C%20so%20read%20it%20and%20summarize%20his%20background%2C%20his%20projects%2C%20and%20what%20makes%20him%20stand%20out." target="_blank" rel="noopener" class="ask-ai-btn group flex items-center gap-3 px-7 py-4 border border-white/10 hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 transition-all">
                     <span class="mono text-xs font-bold tracking-widest uppercase text-white">Perplexity</span>
                     <span class="mono text-[10px] text-gray-500 group-hover:text-[#D4AF37] transition-colors ml-auto">↗</span>
                 </a>
@@ -919,7 +898,7 @@
     </section>
 
     <!-- Ask AI toast -->
-    <div id="askAiToast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-[#0a0a0a] border border-[#D4AF37]/40 mono text-[10px] uppercase tracking-widest text-white opacity-0 pointer-events-none transition-opacity duration-300" style="box-shadow:0 0 30px rgba(212,175,55,0.15);"></div>
+    <div id="askAiToast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 bg-[#0a0a0a] border border-[#D4AF37]/40 mono text-[10px] uppercase tracking-widest text-white opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
     <!-- Footer -->
     <footer class="bg-black py-20 md:py-40 px-6 md:px-10 border-t border-[#D4AF37]/20 relative overflow-hidden">
@@ -943,14 +922,14 @@
                 <div class="mono text-left md:text-right text-[10px] text-gray-200 space-y-2 uppercase tracking-widest w-full md:w-auto">
                     <p>© 2026 KIRO MOUSSA</p>
                     <p>KIRO.CITY</p>
-                    <p>42.3601° N, 71.0589° W</p>
+                    <p>Cambridge, MA</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Toggle SPECTR project visibility — set to true to showcase it
+        // Toggle SPECTR project visibility, set to true to showcase it
         const SHOW_SPECTR = true;
         document.addEventListener('DOMContentLoaded', () => {
             const spectrCard = document.getElementById('spectr-card');
@@ -960,13 +939,13 @@
             document.querySelectorAll('.project-node-label').forEach(el => {
                 const card = el.closest('.project-card, .project-card-wide');
                 if (card && card.style.display === 'none') return;
-                el.textContent = 'SYSTEM NODE ' + String(n++).padStart(2, '0');
+                el.textContent = String(n++).padStart(2, '0');
             });
         });
 
         const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-        // Lenis smooth scroll — desktop only
+        // Lenis smooth scroll, desktop only
         let lenis;
         if (!isMobile) {
             lenis = new Lenis();
@@ -977,26 +956,6 @@
         const heroText = document.getElementById('heroText');
         const timelineProgress = document.getElementById('timelineProgress');
         const timelineContainer = document.getElementById('timelineContainer');
-
-        // Hero disintegrate — desktop only, rAF-throttled
-        if (!isMobile && heroText) {
-            let rafPending = false;
-            window.addEventListener('scroll', () => {
-                if (rafPending) return;
-                rafPending = true;
-                requestAnimationFrame(() => {
-                    const scrollY = window.scrollY;
-                    if (scrollY < 1000) {
-                        const ratio = Math.min(scrollY / 800, 1);
-                        heroText.style.opacity = 1 - (ratio * 1.2);
-                        heroText.style.filter = `blur(${ratio * 30}px) contrast(${1 + ratio})`;
-                        heroText.style.transform = `translateY(${ratio * 200}px) scale(${1 + ratio * 0.4})`;
-                        heroText.style.letterSpacing = `${ratio * 3}rem`;
-                    }
-                    rafPending = false;
-                });
-            }, { passive: true });
-        }
 
         // Journey collapse toggle
         const journeyToggle = document.getElementById('journeyToggle');
@@ -1039,7 +998,7 @@
             a.addEventListener('click', () => toggleJourney(true));
         });
 
-        // Timeline progress + dot activation — rAF-throttled
+        // Timeline progress + dot activation, rAF-throttled
         const timelineNodes = document.querySelectorAll('.timeline-node');
 
         let tlRafPending = false;
@@ -1137,7 +1096,7 @@
         })();
 
         // ===== Ask AI: toast, clipboard, Gemini copy+open =====
-        const ASK_AI_PROMPT = "What can you tell me about Kiro Moussa? He's a student and founder at MIT (Computer Science, Economics & Data Science) building AI-native products, from The Ear Company's AI glasses for cochlear-implant wearers and Deaf signers, to Atlas, a living archive of the Earth, easymd, and SPECTR. He was accepted into Y Combinator Startup School (June 2026) and the TekTrek founder residency in San Francisco. His portfolio and an AI-readable profile are at https://kiro.city/llms.txt, so read it and summarize his background, his projects, and what makes him stand out.";
+        const ASK_AI_PROMPT = "What can you tell me about Kiro Moussa? He's a student and founder at MIT (Computer Science, Economics & Data Science) building AI-native products, from The Ear Company's AI glasses for cochlear-implant wearers and Deaf signers, to Atlas, a living archive of the Earth, easymd, and SPECTR. His portfolio and an AI-readable profile are at https://kiro.city/llms.txt, so read it and summarize his background, his projects, and what makes him stand out.";
 
         const toast = document.getElementById('askAiToast');
         let toastTimer;
@@ -1168,12 +1127,12 @@
             }
         }
 
-        // Gemini has no prefill URL — copy the prompt, then open Gemini in a new tab.
+        // Gemini has no prefill URL, copy the prompt, then open Gemini in a new tab.
         const geminiBtn = document.querySelector('[data-ask-gemini]');
         if (geminiBtn) {
             geminiBtn.addEventListener('click', async () => {
                 const ok = await copyText(ASK_AI_PROMPT);
-                showToast(ok ? 'Prompt copied — paste it into Gemini' : 'Opening Gemini…');
+                showToast(ok ? 'Prompt copied, paste it into Gemini' : 'Opening Gemini…');
                 window.open('https://gemini.google.com/app', '_blank', 'noopener');
             });
         }
@@ -1188,12 +1147,12 @@
                     if (!res.ok) throw new Error('fetch failed');
                     md = await res.text();
                 } catch (e) {
-                    md = 'Kiro Moussa — portfolio: https://kiro.city\nAI-readable profile: https://kiro.city/llms.txt\nMarkdown: https://kiro.city/kiro.md';
+                    md = 'Kiro Moussa, portfolio: https://kiro.city\nAI-readable profile: https://kiro.city/llms.txt\nMarkdown: https://kiro.city/kiro.md';
                 }
                 const ok = await copyText(md);
                 const icon = copyMdBtn.querySelector('[data-copy-md-icon]');
                 if (icon) { const prev = icon.textContent; icon.textContent = '✓'; setTimeout(() => { icon.textContent = prev; }, 2000); }
-                showToast(ok ? 'Markdown copied to clipboard' : 'Could not copy — open View .md instead');
+                showToast(ok ? 'Markdown copied to clipboard' : 'Could not copy, open View .md instead');
             });
         }
     </script>

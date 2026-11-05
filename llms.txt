@@ -2,7 +2,7 @@
 
 > Kiro Moussa is a student, founder, and designer at MIT (Class of 2029), studying Computer Science, Economics & Data Science. He builds AI-native products across AI hardware and accessibility, GovTech, FinTech, and developer tools, and is focused on creating impact that actually changes and helps the world.
 
-Born in Egypt and moved to California at age 7, Kiro is bilingual in Arabic and English. He started running Minecraft servers on Windows Server 2016 at age 12 — his shift from user to system architect. He is a staff writer at The Tech (MIT's independent newspaper since 1881), was accepted into the Y Combinator Startup School June 2026 cohort, and was selected for the TekTrek student-founder residency in San Francisco (Summer 2026).
+Born in Egypt and moved to California at age 7, Kiro is bilingual in Arabic and English. He started running Minecraft servers on Windows Server 2016 at age 12 — his shift from user to system architect. He is a staff writer at The Tech (MIT's independent newspaper since 1881).
 
 Canonical site: https://kiro.city
 Markdown version of this profile: https://kiro.city/kiro.md
@@ -26,7 +26,7 @@ Contact: kiro@mit.edu
 - 2023 — Research: Built Nystagmus Vision (2x Silver, RCSEF). Led FTC Robotics Team 8472 as Captain, writing Java for autonomous routines scoring up to 150 pts. Volunteered 4–8 hrs/week at Loma Linda University Hospital; founded the school Coding Club.
 - 2024 — National Online Champions in Academic Decathlon. Accepted to QuestBridge National College Match. Applied to 40+ programs; selected for 13 fly-in programs across 9 states.
 - 2025 — Enrolled at MIT (Computer Science, Data Science & Economics). Staff writer at The Tech. Built RefGraph at HackMIT 2025.
-- 2026 — Building The Ear Company, Atlas, easymd, Plateform, FirstPass, and SPECTR. Accepted to Y Combinator Startup School (June 2026 cohort). Selected for the TekTrek SF founder residency (Summer 2026); presented SPECTR on day one.
+- 2026 — Building The Ear Company, Atlas, easymd, Plateform, FirstPass, and SPECTR.
 
 ## Skills
 
